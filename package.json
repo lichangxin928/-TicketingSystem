@@ -1,0 +1,25 @@
+{
+  "name": "ticketingsystem",
+  "version": "1.0.0",
+  "description": "电影售票系统：\r \t1.0 版本：\r \t\t基本的用户登录与注册功能，用户通过输入账号和密码进入电影售票系统主页，能够对首页中的电影进行\r \t\t买票，管理员登录，能实现对电影的基本管理功能。",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lichangxin928/TicketingSystem.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lichangxin928/TicketingSystem/issues"
+  },
+  "homepage": "https://github.com/lichangxin928/TicketingSystem#readme",
+  "dependencies": {
+    "art-template": "^4.13.2",
+    "express": "^4.17.1",
+    "express-art-template": "^1.0.1"
+  }
+}
