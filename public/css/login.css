@@ -90,8 +90,6 @@ body {
   }
 }
 
-/* Fallback for IE
--------------------------------------------------- */
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   .form-label-group > label {
     display: none;
