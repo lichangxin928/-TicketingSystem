@@ -16,5 +16,11 @@ app.get('/',function(req,res){
 })
 
 app.get('/user_login',function(req,res){
-    res.render('user_login.html');
+    res.render('index.html');
+})
+app.get('/forgot',function(req,res){
+    res.render('forgot.html');
+})
+app.get('/sign-up',function(req,res){
+    res.render('sign-up.html');
 })
