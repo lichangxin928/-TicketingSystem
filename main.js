@@ -47,8 +47,11 @@ app.post('/form',function(req,res){
         if(err){
             res.render('login_res.html',{result:"登录失败"})
         }else{
-            if(resl.RowDataPacket == null) res.render('login_res.html',{result:"登录失败"})
-            res.render('login_res.html',{result:"登录成功！"})
+            if(resl[0] == null) res.render('login_res.html',{result:"登录失败"})
+            else{
+                 res.render('login_res.html',{result:"登录成功！"})
+            }
+           
         }
     })
 

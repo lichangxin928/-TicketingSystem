@@ -44,6 +44,8 @@
 		.TF{
 			margin-top: -20px;
 			color: red;
+			font-size:small;
+			font-family:宋体;
 		}
 	</style>
 	</head>
@@ -62,7 +64,7 @@
 					
 
 					<!-- Start Sign In Form -->
-					<form action="/sign-up/from" method="POST" class="fh5co-form animate-box" data-animate-effect="fadeInLeft">
+					<form action="/sign-up/from" method="POST" class="fh5co-form animate-box" data-animate-effect="fadeInLeft" name="myform">
 						<h2>注册</h2>
 						<div class="form-group">
 							<label for="email" class="sr-only">Email</label>
@@ -86,7 +88,7 @@
 							<p>已经注册? <a href="/user_login">登录</a></p>
 						</div>
 						<div class="form-group">
-							<input type="submit" value="注册" class="btn btn-primary">
+							<input type="button" value="注册" class="btn btn-primary" id="bt">
 						</div>
 					</form>
 					<!-- END Sign In Form -->
@@ -110,12 +112,20 @@
 
 	<script type="text/javascript">
 	window.onload = function(){
+		var btn=document.getElementById('bt');
+		var em=document.getElementById('email');
 		var psw=document.getElementById('Password');
 		var re_psw=document.getElementById('re-password');
 		var divs = document.getElementsByClassName('TF');
+		em.onblur=function(){
+			if(em.value==''){
+				divs[0].innerHTML="邮箱账号不能为空！"
+			}
+			else divs[0].innerHTML=""
+		}
 		psw.onblur=function(){
 			var password=psw.value;
-			if(password.length<6||password.length>18){
+			if(password.length!=0&&password.length<6||password.length>18){
 				divs[1].innerHTML="密码长度必须为6到18位！"
 			}
 			else{
@@ -131,6 +141,26 @@
 			else{
 				divs[2].innerHTML=''
 			}
+		}
+		btn.onclick=function(){
+			if(em.value==''||psw.value==''||re_psw==''){
+				if(em.value==''){
+				divs[0].innerHTML="邮箱账号不能为空！"
+				em.focus();
+				}
+				if(psw.value==''){
+				divs[1].innerHTML="密码不能为空！"
+				}
+				if(re_psw.value==''){
+				divs[2].innerHTML="请确认密码！"
+				}
+				return false;
+			}
+			else if(/^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/.test(em.value)==false){
+					divs[0].innerHTML="请输入正确的邮箱格式！";
+					return false;
+				}
+			document.myform.submit();
 		}
 	}
 		

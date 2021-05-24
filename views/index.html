@@ -37,12 +37,58 @@
 
 
 	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
+	<script src="../public/js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
-
+	<style>
+		.tf {
+			margin-top: -20px;
+			color: red;
+			font-size:small;
+			font-family:宋体;
+		}
+	</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				var btn=document.getElementById('bt');
+				var em=document.getElementById('email');
+				var psw=document.getElementById('password');
+				var divs=document.getElementsByClassName('tf');
+				em.onblur=function(){
+	
+					if(em.value==''){
+						divs[0].innerHTML='邮箱账号不能为空！';
+					}
+					else divs[0].innerHTML='';
+				}
+				psw.onblur=function(){
+					if(psw.value==''){
+						divs[1].innerHTML='密码不能为空！';
+						
+					}
+					else divs[1].innerHTML='';
+				}
+				btn.onclick=function(){
+					if(em.value==''||psw.value==''){
+						if(em.value==''){
+							divs[0].innerHTML='邮箱账号不能为空！';
+							em.focus();
+						}
+						if(psw.value==''){
+							divs[1].innerHTML='密码不能为空！';
+						}
+						return false;
+					}
+					else if(/^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/.test(em.value)==false){
+						divs[0].innerHTML="请输入正确的邮箱格式！";
+						return false;
+					}
+					document.myform.submit();
+				}
+			}
+		</script>
 	</head>
 	<body class="style-2">
 
@@ -61,16 +107,18 @@
 					
 
 					<!-- Start Sign In Form -->
-					<form action="/form" method="POST" class="fh5co-form animate-box" data-animate-effect="fadeInLeft">
+					<form action="/form" method="POST" class="fh5co-form animate-box" data-animate-effect="fadeInLeft" name="myform">
 						<h2> 登录 </h2>
 						<div class="form-group">
 							<label for="email" class="sr-only">Email</label>
 							<input type="email" class="form-control" id="email" name="user" placeholder="邮箱" autocomplete="off">
 						</div>
+						<div class="tf"></div>
 						<div class="form-group">
 							<label for="password" class="sr-only">Password</label>
 							<input type="password" name="psw" class="form-control" id="password" placeholder="密码" autocomplete="off">
 						</div>
+						<div class="tf"></div>
 						<div class="form-group">
 							<label for="remember"><input type="checkbox" id="remember"> 记住我</label>
 						</div>
@@ -78,7 +126,7 @@
 							<p>没有注册? <a href="/sign-up">注册</a> | <a href="/forgot">忘记密码?</a></p>
 						</div>
 						<div class="form-group">
-							<input type="submit" value="登录" class="btn btn-primary">
+							<input type="button" value="登录" class="btn btn-primary" id="bt">
 						</div>
 					</form>
 					<!-- END Sign In Form -->
@@ -86,6 +134,7 @@
 				</div>
 			</div>
 		</div>
+
 	
 	<!-- jQuery -->
 	<script src="../public/js/jquery.min.js"></script>
@@ -98,6 +147,8 @@
 	<!-- Main JS -->
 	<script src="../public/js/main.js"></script>
 
+
 	</body>
+
 </html>
 
