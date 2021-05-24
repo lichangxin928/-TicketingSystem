@@ -41,6 +41,7 @@ router.post('/form',function(req,res){
            
         }
     })
+    conn.end();
 })
 // 接收用户注册
 /**
@@ -60,5 +61,6 @@ router.post('/sign-up/from',function(req,res){
             else res.render('sign_res.html',{result:'注册成功'})
         }
     })
+    conn.end();
 })
 module.exports = router;
