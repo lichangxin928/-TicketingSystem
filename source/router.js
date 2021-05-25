@@ -1,6 +1,7 @@
 const express = require('express');
 const conn = require('./sqlconn.js')
 const router = express.Router();
+
 router.use(express.json())
 router.use(express.urlencoded({ extended: false }));
 
@@ -32,7 +33,7 @@ router.post('/form',function(req,res){
 
     conn.query(sql,[data.user,data.psw],function(err,resl){
         if(err){
-            res.render('login_res.html',{result:"登录失败"})
+            res.send("server is wrong")
         }else{
             if(resl[0] == null) res.render('login_res.html',{result:"登录失败"})
             else{

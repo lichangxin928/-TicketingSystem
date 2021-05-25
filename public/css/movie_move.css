@@ -53,7 +53,8 @@ to {left:-100%;}
 	transition: 1.6s;
 }
 .div_img{
-	width: 280px;
-	height: 400px;
+	margin: 25px,0px;
+	width: 230px;
+	height: 350px;
 	overflow: hidden;
 }
