@@ -1,6 +1,9 @@
 const express = require('express');
 const conn = require('./sqlconn.js')
+const DB = require('./dao.js')
+const url = require("url");
 const router = express.Router();
+
 
 router.use(express.json())
 router.use(express.urlencoded({ extended: false }));
@@ -28,7 +31,6 @@ router.get('/sign-up',function(req,res){
  */
 router.post('/form',function(req,res){
     const data = req.body;
-    console.log(data)
     const sql = "select * from user where user = ? and psw = ?"
 
     conn.query(sql,[data.user,data.psw],function(err,resl){
@@ -42,7 +44,17 @@ router.post('/form',function(req,res){
            
         }
     })
-    conn.end();
+})
+router.get('/formTest',function(req,res){
+    const data = url.parse(req.url,true).query;
+    setTimeout(() => {
+        DB.CheckUser(data,function(flag){
+            if(flag == 1) {
+                res.send("yes");
+            }
+            else res.send("no");
+    }, 0);
+})
 })
 // 接收用户注册
 /**
@@ -62,6 +74,20 @@ router.post('/sign-up/from',function(req,res){
             else res.render('sign_res.html',{result:'注册成功'})
         }
     })
-    conn.end();
+})
+
+router.get('/findUser',function(req,res){
+    const em = url.parse(req.url,true).query.email;
+    setTimeout(()=>{
+        DB.findUser(em,function(flag){
+        // 异步回调
+        if(flag <=0 ){
+            res.send("no");
+        }else{
+            res.send("yes");
+        }
+    })
+    },0)
+    
 })
 module.exports = router;
