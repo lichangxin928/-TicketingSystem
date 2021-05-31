@@ -15,7 +15,7 @@
             var user_name = $('#form-username').val();//获取输入的账户名
 
             //这里我用的是ajax将用户名和邮箱发到后台
-            $.get('/api/email',
+            $.get('/email',
                 {
                     email: email,
                     user_name: user_name
@@ -45,7 +45,7 @@
 </head>
 
 <body>
-    <form role="form" action="doRegister" method="post" class="login-form">
+    <form role="form" action="#" method="get" class="login-form">
         <div class="form-group">
             <label class="sr-only" for="form-username">Username</label>
             <input type="text" name="username" placeholder="请输入账号..." class="form-username form-control"
