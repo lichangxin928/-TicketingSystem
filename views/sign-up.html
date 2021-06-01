@@ -148,7 +148,7 @@
 			}
 		}
 		btn.onclick=function(){
-			if(em.value==''||psw.value==''||re_psw==''){
+			if(em.value==''||psw.value==''||re_psw.value==''){
 				if(em.value==''){
 				divs[0].innerHTML="邮箱账号不能为空！"
 				em.focus();
@@ -165,6 +165,7 @@
 					divs[0].innerHTML="请输入正确的邮箱格式！";
 					return false;
 				}
+			if(divs[0].innerHTML==''&&divs[1].innerHTML==''&&divs[2].innerHTML=='')
 			document.myform.submit();
 		}
 	}

@@ -125,6 +125,7 @@ router.get('/email', async (req, res) => {
         console.log(err)
     }
 })
+// 判断是否输入的邮箱与验证码是否符合 ajax
 router.get('/findPsw', async (req, res) => {
     const data = req.query;
     console.log(data.email, data.code)
@@ -137,8 +138,26 @@ router.get('/findPsw', async (req, res) => {
 
     else res.send("no");
 })
+// 如果符合就跳转到修改密码界面
+// 将邮箱传回
 router.post('/findPsw',async (req,res)=>{
     console.log(req.body);
-    res.render('findPsw.html');
+    res.render('findPsw.html',{
+        email:req.body.email,
+    });
 })
+// 修改密码
+router.post('/change',async (req,res)=>{
+    console.log('/change:' +  req.body.email,req.body.newPsw)
+    const email = req.body.email;
+    const newPsw = req.body.newPsw;
+    const sql = "update user set psw = ? where user = ?"
+    const result = await db(sql,[newPsw,email]);
+    if(result.affectedRows == 0){
+        res.send('服务器连接问题，修改失败');
+    }else{
+        res.render('change_success.html');
+    }
+})
+
 module.exports = router;

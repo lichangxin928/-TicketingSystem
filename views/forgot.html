@@ -68,7 +68,7 @@
 			bt.onclick = function () {
 				let email = em.value;
 				let code = codeInput.value;
-				if(divs[0].innerHTML==''&&codeInput.value!=''){
+				if((divs[0].innerHTML=='' || divs[0].innerHTML=='邮箱发送成功')&&codeInput.value!=''){
 					$.get("/findPsw?email="+email+'&code='+code,(data,status)=>{
 						console.log(data)
 						if(data == "yes") document.myform.submit();
