@@ -11,7 +11,6 @@ const config = {
         pass:'IQQZDPQUYWEZJRYU' // 邮箱授权码
     }
 }
-
 const transporter = nodemailer.createTransport(config);
 
 module.exports = function(mail,res){

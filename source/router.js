@@ -1,6 +1,5 @@
 const express = require('express');
 const db = require('./db.js')
-const url = require("url");
 const router = express.Router();
 const tools = require('./tools.js')
 const nodemail = require('./nodemail.js')
@@ -43,7 +42,7 @@ router.post('/form', async (req, res) => {
         })
     }
 })
-
+// 用于判断账号和密码是否正确
 router.get('/formTest', async (req, res) => {
     // 获取 get 数据
     const data = req.query;
@@ -60,57 +59,86 @@ router.get('/formTest', async (req, res) => {
  * url /sign-up/from
  * 
  */
-router.post('/sign-up/from',async (req, res) => {
+router.post('/sign-up/from', async (req, res) => {
+    // 使用 await promise 时会自动转换为 resolve 函数中的参数
     const data = req.body;
     const sql = "insert into user value(?,?);";
-    const result = await db(sql,[data.user,data.psw]);
-    if(result.affectedRows == 0) res.render('sign_res.html',{result:"注册失败"});
-    else res.render('sign_res.html',{result:'注册成功'});
+    const result = await db(sql, [data.user, data.psw]);
+    if (result.affectedRows == 0) res.render('sign_res.html', { result: "注册失败" });
+    else res.render('sign_res.html', { result: '注册成功' });
 })
-
-router.get('/findUser',async (req,res) => {
+// 判断用户名是否重复 ajax
+router.get('/findUser', async (req, res) => {
     const data = req.query;
     const sql = "select * from user where user = ?"
-    const result = await db(sql,[data.email]);
-    if(result.length==0) res.send('yes');
+    const result = await db(sql, [data.email]);
+    if (result.length == 0) res.send('yes');
     else res.send('no');
 })
-module.exports = router;
 
-
-router.get('/test',async (req,res) => {
-    res.render('SIGN.html')
-})
-router.get('/email',async (req,res)=>{
- 
+// 发送邮件 ajax
+router.get('/email', async (req, res) => {
     const email = req.query.email;//刚刚从前台传过来的邮箱
-    const user_name = req.query.user_name;//刚刚从前台传过来用户名
-    const code =  tools.createSixNum();//生成的随机六位数
-    const date = new Date();//获取当前时间
+    const code = tools.createSixNum();//生成的随机六位数
+    const delay = 300000;   // 验证码的作用时间
     const sql = "select * from user where user = ?"
-    try{
-        const result = await db(sql,[email]);
+    try {
+        const result = await db(sql, [email]);
         console.log(result);
-        if(result.length>0){
-            req.body ={success:false,message:"账号已经存在"}
-        }else{
-            req.body ={success:true,message:"账号可行"};//数据传回前台
+        if (result.length == 0) {
+            res.json({ status: 400, message: 'no' });
+        } else {
+            req.body = { success: true, message: "账号可行" };//数据传回前台
             var mail = {
                 // 发件人
                 from: 'ticketsystem2021@163.com',
                 // 主题
                 subject: '接受凭证',//邮箱主题
                 // 收件人
-                to:email,//前台传过来的邮箱
+                to: email,//前台传过来的邮箱
                 // 邮件内容，HTML格式
-                text: '用 '+code+' 作为你的验证码'//发送验证码
+                text: '用 ' + code + ' 作为你的验证码'//发送验证码
             };
-     
-            // var json = {user_name,email,code,date,isLive};
-            // await DB.insert('user',json);//将获取到的验证码存进数据库，待会提交时要检查是不是一致
-             nodemail(mail,res);//发送邮件
+            let time;
+            try {
+                const delSql = "delete from checkcode where email = ?;"
+                const inSql = "insert into checkcode value(?,?);"
+                await db(delSql, [email]);
+                await db(inSql, [email, code]);
+                time = setTimeout(() => {
+                    const delCode = "delete from checkcode where email = ?";
+                    try {
+                        db(delCode, [email]);
+                    } catch (err) {
+                        console.log(err);
+                    }
+                }, delay)
+            } catch (err) {
+                console.log(err);
+            }
+            nodemail(mail, res);//发送邮件
+            clearTimeout(time)
+            console.log("email:" + email, "code:" + code)
+
         }
-    }catch(err){
+    } catch (err) {
         console.log(err)
     }
 })
+router.get('/findPsw', async (req, res) => {
+    const data = req.query;
+    console.log(data.email, data.code)
+    const sql = "select * from checkcode where email = ? and code = ?"
+    const result = await db(sql, [data.email, data.code]);
+    if (result.length > 0) {
+        console.log(result)
+        res.send("yes")
+    }
+
+    else res.send("no");
+})
+router.post('/findPsw',async (req,res)=>{
+    console.log(req.body);
+    res.render('findPsw.html');
+})
+module.exports = router;

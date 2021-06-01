@@ -120,12 +120,13 @@
 		em.onblur=function(){
 			if(em.value==''){
 				divs[0].innerHTML="邮箱账号不能为空！"
-			}
-			$.get('/findUser?email='+em.value,function(data,status){
+			}else{
+				divs[0].innerHTML=""
+				$.get('/findUser?email='+em.value,function(data,status){
 				if(data=='yes') divs[0].innerHTML = ""
 				else divs[0].innerHTML = '此邮箱已被注册'
 			})
-			
+			}	
 		}
 		psw.onblur=function(){
 			var password=psw.value;
