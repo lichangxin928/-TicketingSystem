@@ -1,14 +1,13 @@
 const mysql = require('mysql');
 //创建数据池
-//推荐使用这种写法，如果每次都是用createConnect来连接那么每次还需要进行关闭数据库连接的操作，略显繁琐
+//如果每次都是用createConnect来连接那么每次还需要进行关闭数据库连接的操作，略显繁琐
 const pool  = mysql.createPool({
   connectionLimit : 10,
   host            : 'localhost',	//默认情况下的主机名
   user            : 'root',			//默认情况下的用户名
-  password        : '111',		//安装时设置的密码
+  password        : '123',		//安装时设置的密码
   database        : 'ticketing'			//连接的数据库名字
 });
-//暴露我们封装的方法，使用详情看下方
 //使用时传入对应参数，sql为相应sql语句，data为插入或修改所需要的数据
 module.exports = (sql, data = []) => {
 //使用Promise解决mysql的命令处理异步问题
