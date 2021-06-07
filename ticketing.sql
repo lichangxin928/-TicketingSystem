@@ -42,15 +42,5 @@ CREATE TABLE `user` (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('1111@qq.com', '111111');
-INSERT INTO `user` VALUES ('111@qq.com', 'admire');
-INSERT INTO `user` VALUES ('123123123@qq.com', 'lichangxin');
-INSERT INTO `user` VALUES ('123123312323@qq.com', '1111111');
-INSERT INTO `user` VALUES ('123123@qq.com', '111111');
-INSERT INTO `user` VALUES ('1234@qq.com', '1212212');
-INSERT INTO `user` VALUES ('123@qq.com', '111111');
-INSERT INTO `user` VALUES ('123@wy.com', '111111');
-INSERT INTO `user` VALUES ('222@qq.com', '111111');
 INSERT INTO `user` VALUES ('2431424266@qq.com', '123123');
 INSERT INTO `user` VALUES ('3390453143@qq.com', '1878703204wsn3');
-INSERT INTO `user` VALUES ('lichangxin@qq.com', '111111');

@@ -39,10 +39,13 @@ router.post('/form', async (req, res) => {
     console.log('/form 登录验证账号：'+data.user+'验证的密码为：'+ data.psw)
     const sql = "select * from user where user = ? and psw = ?";
     const result = await db(sql, [data.user, data.psw]);
+    let dataString = JSON.stringify(result);
+    dataString = JSON.parse(dataString)
     if (result.length != 0) {
+        console.log(dataString)
         res.render('menu.html', {
             url: "/home?email="+data.user,
-            btn_msg: data.user,
+            btn_msg: dataString[0].name,
         })
     }
 })
@@ -66,10 +69,10 @@ router.get('/formTest', async (req, res) => {
  */
 router.post('/sign-up/from', async (req, res) => {
     // 使用 await promise 时会自动转换为 resolve 函数中的参数
-    console.log('/sign-up/form 注册的账号为'+data.user+",注册密码为:"+data.psw)
     const data = req.body;
-    const sql = "insert into user value(?,?);";
-    const result = await db(sql, [data.user, data.psw]);
+    console.log('/sign-up/form 注册的账号为'+data.user+",注册密码为:"+data.psw,"用户名为："+data.name)
+    const sql = "insert into user value(?,?,?);";
+    const result = await db(sql, [data.user, data.psw,data.name]);
     if (result.affectedRows == 0) res.render('sign_res.html', { result: "注册失败" });
     else res.render('sign_res.html', { result: '注册成功' });
 })
