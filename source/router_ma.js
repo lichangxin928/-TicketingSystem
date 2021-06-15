@@ -41,12 +41,33 @@ router.get('/checkMan',async (req,res)=>{
     }
 })
 // 通过 ajax 如果验证成功，则将管理员主页返回
-router.post('/zhu_ye',(req,res)=>{
-    res.render('zhu_ye.html');
+router.post('/zhu_ye',async (req,res)=>{
+    const sql_users = "select * from user limit 5";
+    const sql_history = "select * from history limit 5"
+
+    const data_users = await db(sql_users);
+    const data_history = await db(sql_history);
+
+    let history = JSON.stringify(data_history);
+    let users = JSON.stringify(data_users);
+    console.log("查找到的用户数据为："+users);
+    console.log('历史数据为：'+history)
+    users = JSON.parse(users);
+    history = JSON.parse(history)
+    res.render('zhu_ye.html',{
+        users:users,
+        history:history,
+    });
 })
 // 用户列表
-router.post("/user_list",(req,res)=>{
-    res.render('users.html')
+router.post("/user_list",async (req,res)=>{
+    const sql = 'select  * from user'
+    const data = await db(sql);
+    let data_str = JSON.stringify(data);
+    let user_list = JSON.parse(data_str);
+    res.render('users.html',{
+        users:user_list
+    })
 })
 // 用户删改
 router.post('/user_change',(req,res)=>{
@@ -65,6 +86,39 @@ router.post("/shang_jia",(req,res)=>{
     res.render('shang_jia.html');
 })
 
+// 用户名修改
+router.post('/change_email',(req,res)=>{
+    const email = req.body.email;
+    console.log('需要修改用户信息的账号为：'+email)
+    res.render('user_change.html',{
+        email:email,
+    })
+})
+// 修改用户信息
+router.get('/change_email',async (req,res)=>{
+    let data = req.query;
+    const sql_del = 'delete from user where user = ?';
+    const sql_ins = 'insert into user value(?,?,?)';
+    try{
+        let del_result = await db(sql_del,[data.user]);
+        let ins_result = await db(sql_ins,[data.user,data.psw,data.name])
+        res.render('man_change_success.html')
+    }catch(err){
+        res.send(err);
+    }
+    
+})
+// 删除用户
+router.post('/del_email',async (req,res)=>{
+    let data = req.body;
+    const sql_del = 'delete from user where user = ?';
+    try{
+        await db(sql_del,[data.email]);
+        res.redirect(307,'/user_list')
+    }catch(err){
+        res.send(err)
+    }
+})
 // 错误提示页面
 router.post('/403',(req,res)=>{
     res.render('403.html')

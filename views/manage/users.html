@@ -10,7 +10,6 @@
     <meta name="author" content="">
 
     <link rel="stylesheet" type="text/css" href="../../public/manage/lib/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="../../public/manage/lib/bootstrap/css/bootstrap-responsive.css">
     <link rel="stylesheet" type="text/css" href="../../public/manage/stylesheets/theme.css">
     <link rel="stylesheet" href="../../public/manage/lib/font-awesome/css/font-awesome.css">
 
@@ -43,6 +42,21 @@
 
     <!-- jquery for form -->
     <script src="../../public/manage/javascripts/getPage.js"></script>
+    <script>
+
+        // 修改用户信息事件
+        function change_email(){
+            $('#change_email').val($(this).parent().siblings('.user').text())
+            document.change_form.submit();
+        }
+        // 删除用户信息事件
+        function del_email(){
+            $('#del_email').val($(this).parent().siblings('.user').text())
+            document.del_form.submit();
+        }
+        
+
+</script>
 </head>
 
 <body>
@@ -78,7 +92,7 @@
                     <ul id="dashboard-menu" class="nav nav-list collapse in">
                         <li class="a"><a href="javascript:void(0)">主页</a></li>
                         <li class="a"><a flag="1" href="javascript:void(0)">用户列表</a></li>
-                        <li class="a"><a href="javascript:void(0)">用户删改</a></li>
+                        <li class="a"><a href="javascript:void(0)">用户修改</a></li>
                         <li class="a"><a href="javascript:void(0)">其他</a></li>
                     </ul>
                     <div class="nav-header" data-toggle="collapse" data-target="#accounts-menu"><i
@@ -99,150 +113,66 @@
                 </div>
             </div>
             <form id="form" action="" method="POST" name="getPage"></form>
-        <div class="span9">
-            <h1 class="page-title">Users</h1>
-<div class="btn-toolbar">
-    <button class="btn btn-primary"><i class="icon-plus"></i> New User</button>
-    <button class="btn">Import</button>
-    <button class="btn">Export</button>
-  <div class="btn-group">
-  </div>
-</div>
-<div class="well">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Username</th>
-          <th style="width: 26px;"></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>Mark</td>
-          <td>Tompson</td>
-          <td>the_mark7</td>
-          <td>
-              <a href="user.html"><i class="icon-pencil"></i></a>
-              <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
-          </td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Ashley</td>
-          <td>Jacobs</td>
-          <td>ash11927</td>
-          <td>
-              <a href="user.html"><i class="icon-pencil"></i></a>
-              <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
-          </td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Audrey</td>
-          <td>Ann</td>
-          <td>audann84</td>
-          <td>
-              <a href="user.html"><i class="icon-pencil"></i></a>
-              <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
-          </td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>John</td>
-          <td>Robinson</td>
-          <td>jr5527</td>
-          <td>
-              <a href="user.html"><i class="icon-pencil"></i></a>
-              <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
-          </td>
-        </tr>
-        <tr>
-          <td>5</td>
-          <td>Aaron</td>
-          <td>Butler</td>
-          <td>aaron_butler</td>
-          <td>
-              <a href="user.html"><i class="icon-pencil"></i></a>
-              <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
-          </td>
-        </tr>
-        <tr>
-          <td>6</td>
-          <td>Chris</td>
-          <td>Albert</td>
-          <td>cab79</td>
-          <td>
-              <a href="user.html"><i class="icon-pencil"></i></a>
-              <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-</div>
-<div class="pagination">
-    <ul>
-        <li><a href="#">Prev</a></li>
-        <li><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">Next</a></li>
-    </ul>
-</div>
-
-<div class="modal small hide fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h3 id="myModalLabel">Delete Confirmation</h3>
-    </div>
-    <div class="modal-body">
-        <p class="error-text"><i class="icon-warning-sign modal-icon"></i>Are you sure you want to delete the user?</p>
-    </div>
-    <div class="modal-footer">
-        <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
-        <button class="btn btn-danger" data-dismiss="modal">Delete</button>
-    </div>
-</div>
-
+            <div class="span9">
+                <h1 class="page-title">Users</h1>
+                <div class="btn-toolbar">
+                    <button class="btn btn-primary"><i class="icon-plus"></i> 新增用户</button>
+                    <div class="btn-group">
+                    </div>
+                </div>
+                <div class="well">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>id</th>
+                                <th>邮箱</th>
+                                <th>用户名</th>
+                                <th>密码</th>
+                                <th style="width: 26px;"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{each users}}
+                            <tr>
+                                <td class="id">{{$index + 1}}</td>
+                                <td class="user">{{$value.user}}</td>
+                                <td class="name">{{$value.name}}</td>
+                                <td class="psw">{{$value.psw}}</td>
+                                <td>
+                                    <a class="change" onclick="change_email.call(this)"><i class="icon-pencil"></i></a>
+                                    <a class="del" onclick="del_email.call(this)" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
+                                </td>
+                            </tr>
+                            {{/each}}
+                            <form action='/change_email' method="POST" name="change_form">
+                                <input type="text" name="email" style="display: none;" value="" id="change_email">
+                            </form>
+                            <form action='/del_email'  method="POST" name="del_form">
+                                <input type="text" name="email" style="display: none;" value="" id="del_email">
+                            </form>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="pagination">
+                    <ul>
+                        <li><a href="#">上一页</a></li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">下一页</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-    </div>
-    
+        <footer>
+            <hr>
+            <p>&copy; 2012 <a href="#">Portnine</a></p>
+        </footer>
 
-    
-    <footer>
-        <hr>
-        
-        <p class="pull-right">Collect from <a href="http://www.17sucai.com/" title="网页模板" target="_blank">网页模板</a></p>
-        
-        
-        <p>&copy; 2012 <a href="#">Portnine</a></p>
-    </footer>
-    
+        <script src="../../public/manage/lib/bootstrap/js/bootstrap.js"></script>
+       
 
-    
+</body>
 
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="../../public/manage/lib/bootstrap/js/bootstrap.js"></script>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-  </body>
 </html>
-
-

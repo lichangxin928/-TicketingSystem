@@ -78,7 +78,7 @@
                     <ul id="dashboard-menu" class="nav nav-list collapse in">
                         <li class="a"><a href="javascript:void(0)">主页</a></li>
                         <li class="a"><a flag="1" href="javascript:void(0)">用户列表</a></li>
-                        <li class="a"><a href="javascript:void(0)">用户删改</a></li>
+                        <li class="a"><a href="javascript:void(0)">用户修改</a></li>
                         <li class="a"><a href="javascript:void(0)">其他</a></li>
                     </ul>
                     <div class="nav-header" data-toggle="collapse" data-target="#accounts-menu"><i
@@ -117,36 +117,13 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    {{each users}}
                                     <tr>
-                                        <td>Mark</td>
-                                        <td>Tompson</td>
-                                        <td>the_mark7</td>
+                                        <td>{{$value.name}}</td>
+                                        <td>{{$value.user}}</td>
+                                        <td>{{$value.psw}}</td>
                                     </tr>
-                                    <tr>
-                                        <td>Ashley</td>
-                                        <td>Jacobs</td>
-                                        <td>ash11927</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Audrey</td>
-                                        <td>Ann</td>
-                                        <td>audann84</td>
-                                    </tr>
-                                    <tr>
-                                        <td>John</td>
-                                        <td>Robinson</td>
-                                        <td>jr5527</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Aaron</td>
-                                        <td>Butler</td>
-                                        <td>aaron_butler</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Chris</td>
-                                        <td>Albert</td>
-                                        <td>cab79</td>
-                                    </tr>
+                                    {{/each}}
                                 </tbody>
                             </table>
                         </div>
@@ -171,56 +148,31 @@
                         <div class="block-heading" data-toggle="collapse" data-target="#widget2container">购票历史</div>
                         <div id="widget2container" class="block-body collapse in">
                             <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>邮箱</th>
+                                        <th>电影名称</th>
+                                        <th>价格</th>
+                                        <th>时间</th>
+                                    </tr>
+                                </thead>
                                 <tbody>
+                                    {{each history}}
                                     <tr>
                                         <td>
-                                            <p><i class="icon-user"></i> Mark Otto</p>
+                                            <p><i class="icon-user"></i>&nbsp;{{$value.email}}</p>
                                         </td>
                                         <td>
-                                            <p>Amount: $1,247</p>
+                                            <p>{{$value.movie}}</p>
                                         </td>
                                         <td>
-                                            <p>Date: 7/19/2012</p>
-                                            <a href="#">View Transaction</a>
+                                            <p>{{$value.amount}}</p>    
+                                        </td>
+                                        <td>
+                                            <p>{{$value.date}}</p>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td>
-                                            <p><i class="icon-user"></i> Audrey Ann</p>
-                                        </td>
-                                        <td>
-                                            <p>Amount: $2,793</p>
-                                        </td>
-                                        <td>
-                                            <p>Date: 7/12/2012</p>
-                                            <a href="#">View Transaction</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <p><i class="icon-user"></i> Mark Tompson</p>
-                                        </td>
-                                        <td>
-                                            <p>Amount: $2,349</p>
-                                        </td>
-                                        <td>
-                                            <p>Date: 3/10/2012</p>
-                                            <a href="#">View Transaction</a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <p><i class="icon-user"></i> Ashley Jacobs</p>
-                                        </td>
-                                        <td>
-                                            <p>Amount: $1,192</p>
-                                        </td>
-                                        <td>
-                                            <p>Date: 1/19/2012</p>
-                                            <a href="#">View Transaction</a>
-                                        </td>
-                                    </tr>
-
+                                    {{/each}}
                                 </tbody>
                             </table>
                         </div>
