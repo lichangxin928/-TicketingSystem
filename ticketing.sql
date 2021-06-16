@@ -27,6 +27,7 @@ CREATE TABLE `checkcode` (
 -- ----------------------------
 -- Records of checkcode
 -- ----------------------------
+INSERT INTO `checkcode` VALUES ('351089699@qq.com', '111111');
 INSERT INTO `checkcode` VALUES ('2431424266@qq.com', '621345');
 
 -- ----------------------------
@@ -42,5 +43,6 @@ CREATE TABLE `user` (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
+INSERT INTO `user` VALUES ('351089699@qq.com', '111111');
 INSERT INTO `user` VALUES ('2431424266@qq.com', '123123');
 INSERT INTO `user` VALUES ('3390453143@qq.com', '1878703204wsn3');

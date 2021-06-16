@@ -126,7 +126,19 @@ router.post('/del_email',async (req,res)=>{
         res.send(err)
     }
 })
-
+// 添加用户
+router.post('/add_user',async (req,res)=>{
+    let data = req.body;
+    const sql_del = 'delete from user where user = ?';
+    const sql_ins = 'insert into user value(?,?,?)';
+    try{
+        let del_result = await db(sql_del,[data.user]);
+        let ins_result = await db(sql_ins,[data.user,data.psw,data.name])
+        res.render('man_change_success.html')
+    }catch(err){
+        res.send(err);
+    }
+})
 // 错误提示页面
 router.post('/403',(req,res)=>{
     res.render('403.html')

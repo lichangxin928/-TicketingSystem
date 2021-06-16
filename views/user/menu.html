@@ -53,13 +53,11 @@
       </ul>
       <form class="form-inline mt-2 mt-md-0">
         <input class="form-control mr-sm-2" type="text" placeholder="输入关键字" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜索</button>&nbsp;
+        <button class="btn btn-outline-success my-2 my-sm-0" >搜索</button>&nbsp;
         
       </form>
       <a href="{{url}}" style="text-decoration: none;color: white;">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-          {{btn_msg}} 
-        </button>
+      <button class="btn btn-outline-success my-2 my-sm-0" >{{btn_msg}}</button>
       </a>
     </div>
   </nav>
@@ -86,7 +84,7 @@
         <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#003247"/></svg>
         <div class="container">
           <div class="carousel-caption">
-            <a  href="/sell_ticket1" ><img src="../../public/images/zhuye/menu2.jpg" style="width: 1080px; height: 400px;"> </a>
+            <a  href="/sell_ticket1?{{sell}}" ><img src="../../public/images/zhuye/menu2.jpg" style="width: 1080px; height: 400px;"> </a>
           </div>
         </div>
       </div>
@@ -94,7 +92,7 @@
         <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#db5f2d"/></svg>
         <div class="container">
           <div class="carousel-caption text-right">
-            <a  href="/sell_ticket1" ><img src="../../public/images/zhuye/menu3.jpg" style="width: 1080px; height: 400px;"> </a>
+            <a  href="/sell_ticket1?{{sell}}" ><img src="../../public/images/zhuye/menu3.jpg" style="width: 1080px; height: 400px;"> </a>
           </div>
         </div>
       </div>
@@ -117,16 +115,16 @@
     <div class="box1">
       <p>正在热映</p>
       <ul class="box2">
-        <li><div class="div_img"> <a href="/sell_ticket1"><img src="../../public/images/1.png"></a> </div></li>
-        <li><div class="div_img"> <a href="/sell_ticket1"><img src="../../public/images/2.png"></a> </div></li>
-        <li><div class="div_img"> <a href="/sell_ticket1"><img src="../../public/images/3.png"></a> </div></li>
-        <li><div class="div_img"> <a href="/sell_ticket1"><img src="../../public/images/4.png"></a> </div></li>
-        <li><div class="div_img"> <a href="/sell_ticket1"><img src="../../public/images/5.png"></a> </div></li>
-        <li><div class="div_img"> <a href="/sell_ticket1"><img src="../../public/images/1.png"></a> </div></li>
-        <li><div class="div_img"> <a href="/sell_ticket1"><img src="../../public/images/2.png"></a> </div></li>
-        <li><div class="div_img"> <a href="/sell_ticket1"><img src="../../public/images/3.png"></a> </div></li>
-        <li><div class="div_img"> <a href="/sell_ticket1"><img src="../../public/images/4.png"></a> </div></li>
-        <li><div class="div_img"> <a href="/sell_ticket1"><img src="../../public/images/5.png"></a> </div></li>
+        <li><div class="div_img"> <a href="/sell_ticket1?{{sell}}"><img src="../../public/images/1.png"></a> </div></li>
+        <li><div class="div_img"> <a href="/sell_ticket1?{{sell}}"><img src="../../public/images/2.png"></a> </div></li>
+        <li><div class="div_img"> <a href="/sell_ticket1?{{sell}}"><img src="../../public/images/3.png"></a> </div></li>
+        <li><div class="div_img"> <a href="/sell_ticket1?{{sell}}"><img src="../../public/images/4.png"></a> </div></li>
+        <li><div class="div_img"> <a href="/sell_ticket1?{{sell}}"><img src="../../public/images/5.png"></a> </div></li>
+        <li><div class="div_img"> <a href="/sell_ticket1?{{sell}}"><img src="../../public/images/1.png"></a> </div></li>
+        <li><div class="div_img"> <a href="/sell_ticket1?{{sell}}"><img src="../../public/images/2.png"></a> </div></li>
+        <li><div class="div_img"> <a href="/sell_ticket1?{{sell}}"><img src="../../public/images/3.png"></a> </div></li>
+        <li><div class="div_img"> <a href="/sell_ticket1?{{sell}}"><img src="../../public/images/4.png"></a> </div></li>
+        <li><div class="div_img"> <a href="/sell_ticket1?{{sell}}"><img src="../../public/images/5.png"></a> </div></li>
       </ul>
 </div> 
   </div>
@@ -151,7 +149,7 @@
       </div>
       <div class="col-md-5">
         
-        <a href="/sell_ticket1"><img src="../../public/images/2.png" style="height: 500px;" class="ig"></a>
+        <a href="/sell_ticket1?{{sell}}"><img src="../../public/images/2.png" style="height: 500px;" class="ig"></a>
       </div>
     </div>
 
@@ -165,7 +163,7 @@
       
       </div>
       <div class="col-md-5 order-md-1">
-        <a href="/sell_ticket1"><img src="../../public/images/3.png" style="height: 500px;" class="ig"></a>
+        <a href="/sell_ticket1?{{sell}}"><img src="../../public/images/3.png" style="height: 500px;" class="ig"></a>
       </div>
     </div>
 
@@ -179,7 +177,7 @@
           <p class="lead">四个各自拥有奇葩技能的白领上班族，结伴去抢劫银行的搞笑故事。奇葩到何种程度？比如一个劫匪擅长演讲，就负责在同伙打劫时发表演讲，人质们则报之以热烈掌声。这种愉快的犯罪行径一直在顺利进行着，直到有一天，这四名劫匪又被另一伙人给抢了。</p>
       </div>
       <div class="col-md-5">
-        <a href="/sell_ticket1"><img src="../../public/images/5.png" style="height: 500px;" class="ig"></a>
+        <a href="/sell_ticket1?{{sell}}"><img src="../../public/images/5.png" style="height: 500px;" class="ig"></a>
       </div>
     </div>
 
