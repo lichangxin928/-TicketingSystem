@@ -45,18 +45,18 @@
     <script>
 
         // 修改用户信息事件
-        function change_email(){
+        function change_email() {
             $('#change_email').val($(this).parent().siblings('.user').text())
             document.change_form.submit();
         }
         // 删除用户信息事件
-        function del_email(){
+        function del_email() {
             $('#del_email').val($(this).parent().siblings('.user').text())
             document.del_form.submit();
         }
-        
 
-</script>
+
+    </script>
 </head>
 
 <body>
@@ -98,7 +98,7 @@
                     <div class="nav-header" data-toggle="collapse" data-target="#accounts-menu"><i
                             class="icon-briefcase"></i>票务统计</div>
                     <ul id="accounts-menu" class="nav nav-list collapse in">
-                        <li class="a"><a href="javascript:void(0)">电影售票统计</a></li>
+                        <li class="a"><a href="javascript:void(0)">全部售票历史</a></li>
                         <li class="a"><a href="javascript:void(0)">电影上架</a></li>
                     </ul>
 
@@ -140,14 +140,15 @@
                                 <td class="psw">{{$value.psw}}</td>
                                 <td>
                                     <a class="change" onclick="change_email.call(this)"><i class="icon-pencil"></i></a>
-                                    <a class="del" onclick="del_email.call(this)" role="button" data-toggle="modal"><i class="icon-remove"></i></a>
+                                    <a class="del" onclick="del_email.call(this)" role="button" data-toggle="modal"><i
+                                            class="icon-remove"></i></a>
                                 </td>
                             </tr>
                             {{/each}}
                             <form action='/change_email' method="POST" name="change_form">
                                 <input type="text" name="email" style="display: none;" value="" id="change_email">
                             </form>
-                            <form action='/del_email'  method="POST" name="del_form">
+                            <form action='/del_email' method="POST" name="del_form">
                                 <input type="text" name="email" style="display: none;" value="" id="del_email">
                             </form>
                         </tbody>
@@ -171,7 +172,7 @@
         </footer>
 
         <script src="../../public/manage/lib/bootstrap/js/bootstrap.js"></script>
-       
+
 
 </body>
 

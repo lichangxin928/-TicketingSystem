@@ -78,8 +78,15 @@ router.post('/more',(req,res)=>{
     res.render('more.html');
 })
 // 电影售票统计
-router.post('/total',(req,res)=>{
-    res.render('tong_ji.html');
+router.post('/total',async (req,res)=>{
+    const sql_history = 'select * from history';
+    let data = await db(sql_history);
+    data = JSON.stringify(data);
+    console.log('查询到的历史购票记录为：'+ data);
+    data = JSON.parse(data);
+    res.render('tong_ji.html',{
+        history:data,
+    });
 })
 // 电影上架
 router.post("/shang_jia",(req,res)=>{
@@ -118,6 +125,17 @@ router.post('/del_email',async (req,res)=>{
     }catch(err){
         res.send(err)
     }
+})
+// 购票页面
+router.get('/sell_ticket1',(req,res)=>{
+    res.render("sell_ticket1.html")
+})
+router.get('/sell_ticket2',(req,res)=>{
+    res.render("sell_ticket2.html")
+})
+// 购票成功
+router.get('/shop_success',(req,res)=>{
+    res.render('shop_success.html')
 })
 // 错误提示页面
 router.post('/403',(req,res)=>{
