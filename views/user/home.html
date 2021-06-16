@@ -1,245 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="Dashboard">
-    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>个人主页</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="Dashboard">
+	<meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <!-- Bootstrap core CSS -->
-    <link href="../public/css/bootstrap.min.css" rel="stylesheet">
-    <!--external css-->
-   
-    <!-- Custom styles for this template -->
-    <link href="../public/css/home.css" rel="stylesheet"> 
+	<title>个人主页</title>
 
-    <script src="../public/js/jquery.min.js"></script>
+	<!-- Bootstrap core CSS -->
+	<link href="../public/css/bootstrap.min.css" rel="stylesheet">
+	<!--external css-->
 
-  </head>
+	<!-- Custom styles for this template -->
+	<link href="../public/css/home.css" rel="stylesheet">
 
-  <body>
+	<script src="../public/js/jquery.min.js"></script>
 
-  <section id="container" >
+</head>
 
-      <header class="header black-bg">
-             
+<body>
 
-            <a  class="logo"><b>个人主页</b></a>
-            
-            <div class="top-menu">
-            	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="/">退出登录</a></li>
-            	</ul>
-            </div>
-        </header>
-      <!--header end-->
-      
-      <!-- **********************************************************************************************************************************************************
+	<section id="container">
+
+		<header class="header black-bg">
+
+
+			<a class="logo"><b>个人主页</b></a>
+
+			<div class="top-menu">
+				<ul class="nav pull-right top-menu">
+					<li><a class="logout" href="/">退出登录</a></li>
+				</ul>
+			</div>
+		</header>
+		<!--header end-->
+
+		<!-- **********************************************************************************************************************************************************
       MAIN SIDEBAR MENU
       *********************************************************************************************************************************************************** -->
-      <!--sidebar start-->
-      <aside>
-          <div id="sidebar"  class="nav-collapse ">
-              <!-- sidebar menu start-->
-              <ul class="sidebar-menu" id="nav-accordion">
-              
-              	  <p class="centered"><a href="profile.html"><img src="../public/images/ui-sam.jpg" class="img-circle" width="60"></a></p>
-              	  <h5 class="centered">{{email}}</h5>
-              	  	
+		<!--sidebar start-->
+		<aside>
+			<div id="sidebar" class="nav-collapse ">
+				<!-- sidebar menu start-->
+				<ul class="sidebar-menu" id="nav-accordion">
 
-
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-desktop"></i>
-                          <span>账号安全中心</span>
-                      </a>
-                      <ul class="sub">
-                        <li><a  href="/changePsw?email={{email}}">----------修改密码----------</a></li>
-                        <li><a  href="todo_list.html">----------注销账号----------</a></li>
-                    </ul>
-                  </li>
-				  
-				  <li class="mt">
-				      <a href="../../views/user/order.html">
-				          <i class="fa fa-dashboard"></i>
-				          <span>购票订单></span>
-				      </a>
-				  </li>
-				  
-				  
-				  <li class="mt">
-				      <a href="/form?email={{email}}">
-				          <i class="fa fa-dashboard"></i>
-				          <span>返回主页</span>
-				      </a>
-				  </li>
-
-                  
-
-              </ul>
-              <!-- sidebar menu end-->
-          </div>
-      </aside>
-     
-      <!--main content start-->
-      <section id="main-content">
-          <section class="wrapper site-min-height">
-          	<h3><i class="fa fa-angle-right"></i> 精选电影图片</h3>
-          	<hr>
+					<p class="centered"><a href="profile.html"><img src="../public/images/ui-sam.jpg" class="img-circle"
+								width="60"></a></p>
+					<h5 class="centered">{{email}}</h5>
+					<li class="sub-menu">
+						<a href="javascript:;">
+							<i class="fa fa-desktop"></i>
+							<span>账号安全中心</span>
+						</a>
+						<ul class="sub">
+							<li><a href="/changePsw?email={{email}}">----------修改密码----------</a></li>
+							<li><a href="todo_list.html">----------注销账号----------</a></li>
+						</ul>
+					</li>
+					<li class="mt">
+						<a href="/order?email={{email}}">
+							<i class="fa fa-dashboard"></i>
+							<span>购票订单></span>
+						</a>
+					</li>
+					<li class="mt">
+						<a id="back_home">
+							<i class="fa fa-dashboard"></i>
+							<span>返回主页</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</aside>
+		<section id="main-content">
+			<section class="wrapper site-min-height">
+				<h3><i class="fa fa-angle-right"></i> 精选电影图片</h3>
+				<hr>
 				<div class="row mt">
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
 						<div class="project-wrapper">
-		                    <div class="project">
-		                        <div class="photo-wrapper">
-		                            <div class="photo">
-		                            	<a class="fancybox" href="../public/images/portfolio/port04.jpg"><img class="img-responsive" src="../public/images/portfolio/port04.jpg" alt=""></a>
-		                            </div>
-		                            <div class="overlay"></div>
-		                        </div>
-		                    </div>
-		                </div>
+							<div class="project">
+								<div class="photo-wrapper">
+									<div class="photo">
+										<a class="fancybox" href="../public/images/portfolio/port04.jpg"><img
+												class="img-responsive" src="../public/images/portfolio/port04.jpg"
+												alt=""></a>
+									</div>
+									<div class="overlay"></div>
+								</div>
+							</div>
+						</div>
 					</div><!-- col-lg-4 -->
-					
+
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
 						<div class="project-wrapper">
-		                    <div class="project">
-		                        <div class="photo-wrapper">
-		                            <div class="photo">
-		                            	<a class="fancybox" href="../public/images/portfolio/port05.jpg"><img class="img-responsive" src="../public/images/portfolio/port05.jpg" alt=""></a>
-		                            </div>
-		                            <div class="overlay"></div>
-		                        </div>
-		                    </div>
-		                </div>
+							<div class="project">
+								<div class="photo-wrapper">
+									<div class="photo">
+										<a class="fancybox" href="../public/images/portfolio/port05.jpg"><img
+												class="img-responsive" src="../public/images/portfolio/port05.jpg"
+												alt=""></a>
+									</div>
+									<div class="overlay"></div>
+								</div>
+							</div>
+						</div>
 					</div><!-- col-lg-4 -->
-					
+
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
 						<div class="project-wrapper">
-		                    <div class="project">
-		                        <div class="photo-wrapper">
-		                            <div class="photo">
-		                            	<a class="fancybox" href="../public/images/portfolio/port06.jpg"><img class="img-responsive" src="../public/images/portfolio/port06.jpg" alt=""></a>
-		                            </div>
-		                            <div class="overlay"></div>
-		                        </div>
-		                    </div>
-		                </div>
+							<div class="project">
+								<div class="photo-wrapper">
+									<div class="photo">
+										<a class="fancybox" href="../public/images/portfolio/port06.jpg"><img
+												class="img-responsive" src="../public/images/portfolio/port06.jpg"
+												alt=""></a>
+									</div>
+									<div class="overlay"></div>
+								</div>
+							</div>
+						</div>
 					</div><!-- col-lg-4 -->
 				</div><!-- /row -->
 
 				<div class="row mt">
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
 						<div class="project-wrapper">
-		                    <div class="project">
-		                        <div class="photo-wrapper">
-		                            <div class="photo">
-		                            	<a class="fancybox" href="../public/images/portfolio/port01.jpg"><img class="img-responsive" src="../public/images/portfolio/port01.jpg" alt=""></a>
-		                            </div>
-		                            <div class="overlay"></div>
-		                        </div>
-		                    </div>
-		                </div>
+							<div class="project">
+								<div class="photo-wrapper">
+									<div class="photo">
+										<a class="fancybox" href="../public/images/portfolio/port01.jpg"><img
+												class="img-responsive" src="../public/images/portfolio/port01.jpg"
+												alt=""></a>
+									</div>
+									<div class="overlay"></div>
+								</div>
+							</div>
+						</div>
 					</div><!-- col-lg-4 -->
-					
+
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
 						<div class="project-wrapper">
-		                    <div class="project">
-		                        <div class="photo-wrapper">
-		                            <div class="photo">
-		                            	<a class="fancybox" href="../public/images/portfolio/port02.jpg"><img class="img-responsive" src="../public/images/portfolio/port02.jpg" alt=""></a>
-		                            </div>
-		                            <div class="overlay"></div>
-		                        </div>
-		                    </div>
-		                </div>
+							<div class="project">
+								<div class="photo-wrapper">
+									<div class="photo">
+										<a class="fancybox" href="../public/images/portfolio/port02.jpg"><img
+												class="img-responsive" src="../public/images/portfolio/port02.jpg"
+												alt=""></a>
+									</div>
+									<div class="overlay"></div>
+								</div>
+							</div>
+						</div>
 					</div><!-- col-lg-4 -->
-					
+
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
 						<div class="project-wrapper">
-		                    <div class="project">
-		                        <div class="photo-wrapper">
-		                            <div class="photo">
-		                            	<a class="fancybox" href="../public/images/portfolio/port03.jpg"><img class="img-responsive" src="../public/images/portfolio/port03.jpg" alt=""></a>
-		                            </div>
-		                            <div class="overlay"></div>
-		                        </div>
-		                    </div>
-		                </div>
+							<div class="project">
+								<div class="photo-wrapper">
+									<div class="photo">
+										<a class="fancybox" href="../public/images/portfolio/port03.jpg"><img
+												class="img-responsive" src="../public/images/portfolio/port03.jpg"
+												alt=""></a>
+									</div>
+									<div class="overlay"></div>
+								</div>
+							</div>
+						</div>
 					</div><!-- col-lg-4 -->
 				</div><!-- /row -->
 
 				<div class="row mt mb">
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
 						<div class="project-wrapper">
-		                    <div class="project">
-		                        <div class="photo-wrapper">
-		                            <div class="photo">
-		                            	<a class="fancybox" href="../public/images/portfolio/port04.jpg"><img class="img-responsive" src="../public/images/portfolio/port04.jpg" alt=""></a>
-		                            </div>
-		                            <div class="overlay"></div>
-		                        </div>
-		                    </div>
-		                </div>
+							<div class="project">
+								<div class="photo-wrapper">
+									<div class="photo">
+										<a class="fancybox" href="../public/images/portfolio/port04.jpg"><img
+												class="img-responsive" src="../public/images/portfolio/port04.jpg"
+												alt=""></a>
+									</div>
+									<div class="overlay"></div>
+								</div>
+							</div>
+						</div>
 					</div><!-- col-lg-4 -->
-					
+
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
 						<div class="project-wrapper">
-		                    <div class="project">
-		                        <div class="photo-wrapper">
-		                            <div class="photo">
-		                            	<a class="fancybox" href="../public/images/portfolio/port05.jpg"><img class="img-responsive" src="../public/images/portfolio/port05.jpg" alt=""></a>
-		                            </div>
-		                            <div class="overlay"></div>
-		                        </div>
-		                    </div>
-		                </div>
+							<div class="project">
+								<div class="photo-wrapper">
+									<div class="photo">
+										<a class="fancybox" href="../public/images/portfolio/port05.jpg"><img
+												class="img-responsive" src="../public/images/portfolio/port05.jpg"
+												alt=""></a>
+									</div>
+									<div class="overlay"></div>
+								</div>
+							</div>
+						</div>
 					</div><!-- col-lg-4 -->
-					
+
 					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
 						<div class="project-wrapper">
-		                    <div class="project">
-		                        <div class="photo-wrapper">
-		                            <div class="photo">
-		                            	<a class="fancybox" href="../public/images/portfolio/port06.jpg"><img class="img-responsive" src="../public/images/portfolio/port06.jpg" alt=""></a>
-		                            </div>
-		                            <div class="overlay"></div>
-		                        </div>
-		                    </div>
-		                </div>
+							<div class="project">
+								<div class="photo-wrapper">
+									<div class="photo">
+										<a class="fancybox" href="../public/images/portfolio/port06.jpg"><img
+												class="img-responsive" src="../public/images/portfolio/port06.jpg"
+												alt=""></a>
+									</div>
+									<div class="overlay"></div>
+								</div>
+							</div>
+						</div>
 					</div><!-- col-lg-4 -->
 				</div><!-- /row -->
 
-		</section><! --/wrapper -->
-      </section><!-- /MAIN CONTENT -->
+			</section>
+			<! --/wrapper -->
+		</section><!-- /MAIN CONTENT -->
 
-      <!--main content end-->
-      <!--footer start-->
-      <footer class="site-footer">
-          <div class="text-center">
-             温馨提示：<a  target="_blank" title="个人主页"></a> 请注意账号安全哦！ 
-              <a href="gallery.html#" class="go-top">
-                  <i class="fa fa-angle-up"></i>
-              </a>
-          </div>
-      </footer>
-      <!--footer end-->
-  </section>
+		<!--main content end-->
+		<!--footer start-->
+		<footer class="site-footer">
+			<div class="text-center">
+				温馨提示：<a target="_blank" title="个人主页"></a> 请注意账号安全哦！
+				<a href="gallery.html#" class="go-top">
+					<i class="fa fa-angle-up"></i>
+				</a>
+			</div>
+			<form action="/form" method="post" name="my_form">
+			<input type="text" name="user" id="user" style="display: none;">
+			<input type="text" name="psw" id="psw" style="display: none;">
+		</form>
+		</footer>
+	</section>
+
+	<script class="include" type="text/javascript" src="../public/js/jquery.dcjqaccordion.2.7.js"></script>
+	<script src="../public/js/jquery.scrollTo.min.js"></script>
+
+	<script>
+		$(() => {
+			$('#back_home').on('click', () => {
+				$.post('/get_form', {
+					email: '{{email}}'
+				}, function (data) {
+					data = JSON.parse(data)[0];
+					$('#user').val(data.user);
+					$('#psw').val(data.psw);
+					document.my_form.submit();
+				})
+			})
+
+		})
+	</script>
+
+	<!--common script for all pages-->
+	<script src="../public/js/common-scripts.js"></script>
 
 
+</body>
 
-  <!-- js placed at the end of the document so the pages load faster -->
-	
-    <script class="include" type="text/javascript" src="../public/js/jquery.dcjqaccordion.2.7.js"></script>
-    <script src="../public/js/jquery.scrollTo.min.js"></script>
-    
-
-
-    <!--common script for all pages-->
-    <script src="../public/js/common-scripts.js"></script>  
-
-
-  </body>
 </html>

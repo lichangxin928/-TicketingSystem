@@ -126,17 +126,7 @@ router.post('/del_email',async (req,res)=>{
         res.send(err)
     }
 })
-// 购票页面
-router.get('/sell_ticket1',(req,res)=>{
-    res.render("sell_ticket1.html")
-})
-router.get('/sell_ticket2',(req,res)=>{
-    res.render("sell_ticket2.html")
-})
-// 购票成功
-router.get('/shop_success',(req,res)=>{
-    res.render('shop_success.html')
-})
+
 // 错误提示页面
 router.post('/403',(req,res)=>{
     res.render('403.html')

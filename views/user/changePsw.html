@@ -1,258 +1,294 @@
 <!DOCTYPE html>
 <html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>fuck</title>
-	<script type="text/javascript" src="../public/js/jquery.min.js"></script>
-	
-	<link href="../public/css/bootstrap.min.css" rel="stylesheet">
-	<link href="../public/css/home.css" rel="stylesheet"> 
 
-	
-    <style type="text/css">
-        * {
-            box-sizing: border-box;
-        }
-        body {
-            margin: 0; 
-            padding: 0;
-            font: 16px/20px microsft yahei;
-        }
-        .wrap {
+<head lang="en">
+	<meta charset="UTF-8">
+	<title>fuck</title>
+	<script type="text/javascript" src="../public/js/jquery.min.js"></script>
+
+	<link href="../public/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../public/css/home.css" rel="stylesheet">
+
+
+	<style type="text/css">
+		* {
+			box-sizing: border-box;
+		}
+
+		body {
+			margin: 0;
+			padding: 0;
+			font: 16px/20px microsft yahei;
+		}
+
+		.wrap {
 			margin-left: 500px;
-            width: 35%;
-            height: 500px;
-            padding: 40px 0;
-            position: fixed;
-            top: 50%;
-            margin-top: -200px;
-            opacity: 0.8;
-            background: linear-gradient(to bottom right,#50a3a2,#53e3a6);
-            background: -webkit-linear-gradient(to bottom right,#50a3a2,#53e3a6);
-        }
-        .container {			
-            width: 60%;
-            margin: 0 auto;
-        }
-        .container h1 {
-            text-align: center;
-            color: #FFFFFF;
-            font-weight: 500;
-        }
-        .container input {
-            width: 280px;
-            display: block;
-            height: 36px;
-            border: 0;
-            outline: 0;
-            padding: 6px 10px;
-            line-height: 24px;
-            margin: 10px auto;
-            -webkit-transition: all 0s ease-in 0.1ms;
-            -moz-transition: all 0s ease-in 0.1ms;
-            transition: all 0s ease-in 0.1ms;
-        }
-		#repsd{
+			width: 35%;
+			height: 500px;
+			padding: 40px 0;
+			position: fixed;
+			top: 50%;
+			margin-top: -200px;
+			opacity: 0.8;
+			background: linear-gradient(to bottom right, #50a3a2, #53e3a6);
+			background: -webkit-linear-gradient(to bottom right, #50a3a2, #53e3a6);
+		}
+
+		.container {
+			width: 60%;
+			margin: 0 auto;
+		}
+
+		.container h1 {
+			text-align: center;
+			color: #FFFFFF;
+			font-weight: 500;
+		}
+
+		.container input {
+			width: 280px;
+			display: block;
+			height: 36px;
+			border: 0;
+			outline: 0;
+			padding: 6px 10px;
+			line-height: 24px;
+			margin: 10px auto;
+			-webkit-transition: all 0s ease-in 0.1ms;
+			-moz-transition: all 0s ease-in 0.1ms;
+			transition: all 0s ease-in 0.1ms;
+		}
+
+		#repsd {
 			margin-bottom: 45px;
 		}
-        .container input[type="text"] , .container input[type="password"]  {
-            background-color: #FFFFFF;
-            font-size: 16px;
-            color: #50a3a2;
-        }
-        .container input[type='submit'] {
-            font-size: 16px;
-            letter-spacing: 2px;
-            color: #666666;
-            background-color: #FFFFFF;
-        }
-        .container input:focus {
-            width: 320px;
-        }
-        .container input[type='submit']:hover {
-            cursor: pointer;
-            width: 320px;
-        }
-		p{
+
+		.container input[type="text"],
+		.container input[type="password"] {
+			background-color: #FFFFFF;
+			font-size: 16px;
+			color: #50a3a2;
+		}
+
+		.container input[type='submit'] {
+			font-size: 16px;
+			letter-spacing: 2px;
+			color: #666666;
+			background-color: #FFFFFF;
+		}
+
+		.container input:focus {
+			width: 320px;
+		}
+
+		.container input[type='submit']:hover {
+			cursor: pointer;
+			width: 320px;
+		}
+
+		p {
 			margin-left: 100px;
 			font-size: 25px;
 		}
-		c img{
+
+		c img {
 			width: 35px;
 			height: 25px;
 			position: absolute;
 			left: 450px;
 			top: 195px;
-			cursor:pointer
+			cursor: pointer
 		}
-		img{
-			
-		}
-		.TF{
+
+		img {}
+
+		.TF {
 			width: 250px;
 			height: 15px;
 			padding-left: 25px;
 			color: red;
-			
+
 		}
-		.pt{
+
+		.pt {
 			width: 100%;
 			height: 100%;
-			background-color: rgba(0,0,0,0.7)
+			background-color: rgba(0, 0, 0, 0.7)
 		}
-		#oldpsd{
+
+		#oldpsd {
 			margin-top: 50px;
 			margin-bottom: 30px;
 		}
-    </style>
-	
+	</style>
+
 	<script type="text/javascript">
-		$(document).ready(function() {
-	 
-			$("#dj").click(function() {
-				if($(".pass").attr("type") == "text") {
+		$(document).ready(function () {
+
+			$("#dj").click(function () {
+				if ($(".pass").attr("type") == "text") {
 					$(".pass").attr("type", "password");
 					$("#dj img").css("opacity", 0.5)
 					$("#dj img").attr("src", "../public/images/eye-black.png")
 				} else {
 					$(".pass").attr("type", "text");
 					$("#dj img").css("opacity", 1)
-	 
+
 					var img = $("#dj img").attr("src");
 					console.log(img)
-					if(img == "img/eye.png") {
+					if (img == "img/eye.png") {
 						$("#dj img").attr("src", "../public/images/eye-black.png")
 					} else {
 						$("#dj img").attr("src", "../public/images/eye.png")
 					}
-	 
 				}
 			});
-			
-			$(".submit").click(function(){
-				
+
+			$(".submit").click(function () {
+
 				// $(".TF").text('两次密码输入不一致！')
-				
+
 				var psd = $("#psd").val()
 				var repsd = $("#repsd").val()
-				if(repsd != psd){
+				if (repsd != psd) {
 					$(".TF").text('两次密码输入不一致！')
 					return false
-			    }
-				else if(psd==""){
+				}
+				else if (psd == "") {
 					$(".TF").text('密码不能为空')
 					return false
 				}
-				else if(psd.length!=0 && psd.length<6 || psd.length>18){
+				else if (psd.length != 0 && psd.length < 6 || psd.length > 18) {
 					$(".TF").text('密码长度必须为6到18位')
 					return false
-				}else{
-					console.log('/formTest?user={{email}}&psw='+$('#oldpsd').val())
-					$.get('/formTest?user={{email}}&psw='+$('#oldpsd').val(),(data,err)=>{
-						if(data == 'no') {
+				} else {
+					console.log('/formTest?user={{email}}&psw=' + $('#oldpsd').val())
+					$.get('/formTest?user={{email}}&psw=' + $('#oldpsd').val(), (data, err) => {
+						if (data == 'no') {
 							$(".TF").text('旧密码输入错误！')
 							return false;
-						}else{
+						} else {
 							document.changeOldPsw.submit();
 						}
 					})
-				}			
+				}
 			});
-			
+
 		});
 	</script>
 
 </head>
+
 <body>
-    <div class="wrap">
-		
+	<div class="wrap">
+
 		<p>{{email}}</p>
-        <div class="container">
-            
-            <form action="/change" method="POST" name="changeOldPsw">
-				<input  id="email" type="password" name="email" value="{{email}}" style="display: none;" >
-				
-				<input  id="oldpsd" type="password" name="psw" placeholder="请输入旧密码">
-				
-                <input  class="pass" id="psd" type="password" name="newPsw" placeholder="请输入新密码">
-				<c id="dj"  title="点击隐藏或显示密码">
+		<div class="container">
+
+			<form action="/change" method="POST" name="changeOldPsw">
+				<input id="email" type="password" name="email" value="{{email}}" style="display: none;">
+
+				<input id="oldpsd" type="password" name="psw" placeholder="请输入旧密码">
+
+				<input class="pass" id="psd" type="password" name="newPsw" placeholder="请输入新密码">
+				<c id="dj" title="点击隐藏或显示密码">
 					<img src="../public/images/eye-black.png" />
 				</c>
 				<div class="TF"></div>
-				
-                <input class="pass" id="repsd" type="password" placeholder="请再次输入新密码">
-                <input type="button" class="submit" value="提交">
-            </form>
-        </div>
-        
-    </div>
-	
-	
-<!-- 主页固定部分： -->	
-	<section id="container" >
-	
-	    <header class="header black-bg">
-	          <a  class="logo"><b>个人主页</b></a>
-	          
-	          <div class="top-menu">
-	          	<ul class="nav pull-right top-menu">
-	                  <li><a class="logout" href="/">退出登录</a></li>
-	          	</ul>
-	          </div>
-	      </header>
-		  
-		  
-	    <aside>
-	        <div id="sidebar"  class="nav-collapse ">
-	            <!-- sidebar menu start-->
-	            <ul class="sidebar-menu" id="nav-accordion">
-	            
-	            	  <p class="centered"><a href="profile.html"><img src="../public/images/ui-sam.jpg" class="img-circle" width="60" style="margin-left: -100px;"></a></p>
-	            	  <h5 class="centered">{{email}}</h5>
-	
-	                <li class="sub-menu">
-	                    <a href="javascript:;" >
-	                        <i class="fa fa-desktop"></i>
-	                        <span>账号安全中心</span>
-	                    </a>
-	                    <ul class="sub">
-	                      
-	                      <li><a  href="gallery.html">----------忘记密码----------</a></li>
-	                      <li><a  href="todo_list.html">----------注销账号----------</a></li>
-	                  </ul>
-	                </li>
-					  
-					  <li class="mt">
-					      <a href="menu.html">
-					          <i class="fa fa-dashboard"></i>
-					          <span>购票订单</span>
-					      </a>
-					  </li>
-					  
-					  <li class="mt">
-						<a href="/form?email={{email}}">
+
+				<input class="pass" id="repsd" type="password" placeholder="请再次输入新密码">
+				<input type="button" class="submit" value="提交">
+			</form>
+		</div>
+
+	</div>
+
+
+	<!-- 主页固定部分： -->
+	<section id="container">
+
+		<header class="header black-bg">
+			<a class="logo"><b>个人主页</b></a>
+
+			<div class="top-menu">
+				<ul class="nav pull-right top-menu">
+					<li><a class="logout" href="/">退出登录</a></li>
+				</ul>
+			</div>
+		</header>
+
+
+		<aside>
+			<div id="sidebar" class="nav-collapse ">
+				<!-- sidebar menu start-->
+				<ul class="sidebar-menu" id="nav-accordion">
+
+					<p class="centered"><a href="profile.html"><img src="../public/images/ui-sam.jpg" class="img-circle"
+								width="60" style="margin-left: -100px;"></a></p>
+					<h5 class="centered">{{email}}</h5>
+
+					<li class="sub-menu">
+						<a href="javascript:;">
+							<i class="fa fa-desktop"></i>
+							<span>账号安全中心</span>
+						</a>
+						<ul class="sub">
+
+							<li><a href="gallery.html">----------忘记密码----------</a></li>
+							<li><a href="todo_list.html">----------注销账号----------</a></li>
+						</ul>
+					</li>
+
+					<li class="mt">
+						<a href="/order?email={{email}}">
+							<i class="fa fa-dashboard"></i>
+							<span>购票订单</span>
+						</a>
+					</li>
+
+					<li class="mt">
+						<a id="back_home">
 							<i class="fa fa-dashboard"></i>
 							<span>返回主页</span>
 						</a>
-					  </li>
-					  
-					  <li class="mt">
-					      <a href="/home?email={{email}}">
-					          <i class="fa fa-dashboard"></i>
-					          <span>返回个人主页</span>
-					      </a>
-					  </li>
-	
-	                
-	
-	            </ul>
-	        </div>
-	    </aside>
-</section>	
-	
+					</li>
+
+					<li class="mt">
+						<a href="/home?email={{email}}">
+							<i class="fa fa-dashboard"></i>
+							<span>返回个人主页</span>
+						</a>
+					</li>
+
+
+
+				</ul>
+			</div>
+		</aside>
+	</section>
+	<form action="/form" method="POST" name="my_form">
+        <input id="user" type="text" name="user" style="display: none;">
+        <input id="psw" type="text" name="psw" style='display:none;'>
+    </form>
 	<script class="include" type="text/javascript" src="../public/js/jquery.dcjqaccordion.2.7.js"></script>
 	<script src="../public/js/jquery.scrollTo.min.js"></script>
-	<script src="../public/js/common-scripts.js"></script> 
-	
+	<script src="../public/js/common-scripts.js"></script>
+	<script>
+		$(() => {
+			$('#back_home').on('click', () => {
+				$.post('/get_form', {
+					email: '{{email}}'
+				}, function (data) {
+					data = JSON.parse(data)[0];
+					$('#user').val(data.user);
+					$('#psw').val(data.psw);
+					document.my_form.submit();
+				})
+			})
+
+		})
+	</script>
+
 </body>
+
 </html>

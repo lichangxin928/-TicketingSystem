@@ -3,6 +3,7 @@ const db = require('./db.js')
 const router = express.Router();
 const tools = require('./tools.js')
 const nodemail = require('./nodemail.js')
+const moment = require('moment')
 
 
 router.use(express.json())
@@ -46,6 +47,7 @@ router.post('/form', async (req, res) => {
         res.render('menu.html', {
             url: "/home?email="+data.user,
             btn_msg: dataString[0].name,
+            sell:"email="+data.user
         })
     }
 })
@@ -61,7 +63,67 @@ router.get('/formTest', async (req, res) => {
     else res.send("yes");
 
 })
-
+// 购票页面
+router.get('/sell_ticket1',(req,res)=>{
+    let data = req.query;
+    if(data.email){
+        res.render("sell_ticket1.html",{
+            sell_btn:data.email,
+            sell_email:"email="+data.email,
+            sell_url:"#",
+        })
+    }else{
+        res.render('sell_ticket1.html',{
+            sell_btn:'登录',
+            sell_url:'/user_login',
+        })
+    }
+    
+})
+router.get('/sell_ticket2',(req,res)=>{
+    let data = req.query;
+    if(data.email){
+        res.render("sell_ticket2.html",{
+            sell_btn:data.email,
+            sell_url:"#",
+        })
+    }else{
+        res.render('sell_ticket2.html',{
+            sell_btn:'登录',
+            sell_url:'/user_login',
+        })
+    }
+})
+// 购票成功
+router.get('/shop_success1',async (req,res)=>{
+    let email = req.query.email;
+    let date = moment(new Date()).format('YYYY-MM-DD HH:mm:ss')
+    console.log("当前时间为："+date)
+    const sell_sql = "insert into history value(?,?,?,?)"
+    try{
+        await db(sell_sql,[email,'八月未央',60,date])
+        res.render('shop_success.html',{
+            email:email
+        })
+    }catch(err){
+        res.send(err)
+    }
+    
+})
+router.get('/shop_success2',async (req,res)=>{
+    let email = req.query.email;
+    let date = moment(new Date()).format('YYYY-MM-DD HH:mm:ss')
+    console.log("当前时间为："+date)
+    const sell_sql = "insert into history value(?,?,?,?)"
+    try{
+        await db(sell_sql,[email,'超越',60,date])
+        res.render('shop_success.html',{
+            email:email
+        })
+    }catch(err){
+        res.send(err)
+    }
+})
 // 接收用户注册
 /**
  * url /sign-up/from
@@ -194,5 +256,33 @@ router.get('/changePsw',(req,res)=>{
     res.render('changePsw.html',{
         email:data,
     })
+})
+// 获取用户信息表单
+router.post('/get_form',async (req,res)=>{
+    const email = req.body.email;
+    const sql = 'select * from user where user = ?'
+    let data = await db(sql,[email]);
+    data = JSON.stringify(data);
+    console.log('/get_form'+data);
+    console.log('/get_form:'+email);
+    res.send(data)
+})
+// 用户获取购票历史
+router.get('/order',async (req,res)=>{
+    let email = req.query.email;
+    const sql_his = 'select * from history where email = ?'
+    try{
+        let result = await db(sql_his,[email])
+        result = JSON.stringify(result);
+        console.log('/order ：'+result);
+        res.render('order.html',{
+            email:email,
+            history:JSON.parse(result)
+        })
+    }catch(err){
+        res.send(err);
+    }
+    
+
 })
 module.exports = router;

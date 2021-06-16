@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="UTF-8">
     <title>fuck</title>
-	<script type="text/javascript" src="../../public/js/jquery.min.js"></script>
-	
-	<link href="../../public/css/bootstrap.min.css" rel="stylesheet">
-	<link href="../../public/css/home.css" rel="stylesheet"> 
+    <script type="text/javascript" src="../../public/js/jquery.min.js"></script>
 
-	
+    <link href="../../public/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../public/css/home.css" rel="stylesheet">
+
+
     <style type="text/css">
-          * {
+        * {
             box-sizing: border-box;
         }
+
         body {
-            margin: 0; 
+            margin: 0;
             padding: 0;
             font: 16px/20px microsft yahei;
         }
+
         .wrap {
-			margin-left: 500px;
+            margin-left: 500px;
             width: 35%;
             height: 500px;
             padding: 40px 0;
@@ -27,18 +30,21 @@
             top: 50%;
             margin-top: -200px;
             opacity: 0.8;
-            background: linear-gradient(to bottom right,#ffd777,#53e3a6);
-            background: -webkit-linear-gradient(to bottom right,#50a3a2,#53e3a6);
+            background: linear-gradient(to bottom right, #ffd777, #53e3a6);
+            background: -webkit-linear-gradient(to bottom right, #50a3a2, #53e3a6);
         }
-        .container {			
+
+        .container {
             width: 60%;
             margin: 0 auto;
         }
+
         .container h1 {
             text-align: center;
             color: #FFFFFF;
             font-weight: 500;
         }
+
         .container input {
             width: 280px;
             display: block;
@@ -52,129 +58,169 @@
             -moz-transition: all 0s ease-in 0.1ms;
             transition: all 0s ease-in 0.1ms;
         }
-		#repsd{
-			margin-bottom: 45px;
-		}
-		p{
-			margin-left: 100px;
-			font-size: 25px;
-		}
-		
-		.pt{
-			width: 100%;
-			height: 100%;
-			background-color: rgba(0,0,0,0.7)
-		}
-		
+
+        #repsd {
+            margin-bottom: 45px;
+        }
+
+        p {
+            margin-left: 100px;
+            font-size: 25px;
+        }
+
+        .pt {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7)
+        }
+
         table.imagetable {
-    font-family: verdana,arial,sans-serif;
-    font-size:11px;
-    color:#333333;
-    border-width: 1px;
-    border-color: #999999;
-    border-collapse: collapse;
-}
-table.imagetable th {
-    width: 200px;
-    background:#ffd777 url('cell-grey.jpg');
-    border-width: 1px;
-    padding: 8px;
-    border-style: solid;
-    border-color: #999999;
-    font-size: 15px;
-}
-table.imagetable td {
-    background:#dcddc0 url('cell-grey.jpg');
-    border-width: 1px;
-    padding: 8px;
-    border-style: solid;
-    border-color: #999999;
-    font-size: 15px;
-}
-.table{
-    position: relative;
-    top: 200px;
-}
+            font-family: verdana, arial, sans-serif;
+            font-size: 11px;
+            color: #333333;
+            border-width: 1px;
+            border-color: #999999;
+            border-collapse: collapse;
+        }
+
+        table.imagetable th {
+            width: 200px;
+            background: #ffd777 url('cell-grey.jpg');
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #999999;
+            font-size: 15px;
+        }
+
+        table.imagetable td {
+            background: #dcddc0 url('cell-grey.jpg');
+            border-width: 1px;
+            padding: 8px;
+            border-style: solid;
+            border-color: #999999;
+            font-size: 15px;
+        }
+
+        .table {
+            position: relative;
+            top: 200px;
+        }
     </style>
 
 </head>
+
 <body>
-   	
-<!-- 主页固定部分： -->	
-	<section id="container" >
-	
-	    <header class="header black-bg">
-	          <a  class="logo"><b>个人主页</b></a>
-	          
-	          <div class="top-menu">
-	          	<ul class="nav pull-right top-menu">
-	                  <li><a class="logout" href="/">退出登录</a></li>
-	          	</ul>
-	          </div>
-	      </header>
-		  
-		  
-	    <aside>
-	        <div id="sidebar"  class="nav-collapse ">
-	            <!-- sidebar menu start-->
-	            <ul class="sidebar-menu" id="nav-accordion">
-	            
-	            	  <p class="centered"><a href="profile.html"><img src="../../public/images/ui-sam.jpg" class="img-circle" width="60" style="margin-left: -100px;"></a></p>
-	            	  <h5 class="centered">{{email}}</h5>
-	
-	                <li class="sub-menu">
-	                    <a href="javascript:;" >
-	                        <i class="fa fa-desktop"></i>
-	                        <span>账号安全中心</span>
-	                    </a>
-	                    <ul class="sub">
-	                      
-	                      <li><a  href="gallery.html">----------忘记密码----------</a></li>
-	                      <li><a  href="todo_list.html">----------注销账号----------</a></li>
-	                  </ul>
-	                </li>
-					  
-					  <li class="mt">
-					      <a href="menu.html">
-					          <i class="fa fa-dashboard"></i>
-					          <span>购票订单</span>
-					      </a>
-					  </li>
-					  
-					  <li class="mt">
-						<a href="/form?email={{email}}">
+
+    <!-- 主页固定部分： -->
+    <section id="container">
+
+        <header class="header black-bg">
+            <a class="logo"><b>个人主页</b></a>
+
+            <div class="top-menu">
+                <ul class="nav pull-right top-menu">
+                    <li><a class="logout" href="/">退出登录</a></li>
+                </ul>
+            </div>
+        </header>
+
+
+        <aside>
+            <div id="sidebar" class="nav-collapse ">
+                <!-- sidebar menu start-->
+                <ul class="sidebar-menu" id="nav-accordion">
+
+                    <p class="centered"><a href="profile.html"><img src="../../public/images/ui-sam.jpg"
+                                class="img-circle" width="60" style="margin-left: -100px;"></a></p>
+                    <h5 class="centered">{{email}}</h5>
+
+                    <li class="sub-menu">
+                        <a href="javascript:;">
+                            <i class="fa fa-desktop"></i>
+                            <span>账号安全中心</span>
+                        </a>
+                        <ul class="sub">
+
+                            <li><a href="gallery.html">----------忘记密码----------</a></li>
+                            <li><a href="todo_list.html">----------注销账号----------</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="mt">
+						<a href="/order?email={{email}}">
+							<i class="fa fa-dashboard"></i>
+							<span>购票订单</span>
+						</a>
+					</li>
+
+					<li class="mt">
+						<a id="back_home" href="javascript:void(0);">
 							<i class="fa fa-dashboard"></i>
 							<span>返回主页</span>
 						</a>
-					  </li>
-					  
-					  <li class="mt">
-					      <a href="/home?email={{email}}">
-					          <i class="fa fa-dashboard"></i>
-					          <span>返回个人主页</span>
-					      </a>
-					  </li>
-	
-	                
-	
-	            </ul>
-	        </div>
-	    </aside>
-</section>	
-<div class="table" style="text-align: center;">
-    <table class="imagetable" style="margin: 0px auto;">
-        <tr>
-            <th>email</th><th>movie</th><th>amount</th><th>date</th>
-        </tr>
-        
-        
-        </table> 
+					</li>
+
+					<li class="mt">
+						<a href="/home?email={{email}}">
+							<i class="fa fa-dashboard"></i>
+							<span>返回个人主页</span>
+						</a>
+					</li>
+
+
+
+                </ul>
+            </div>
+        </aside>
+    </section>
+    <div class="table" style="text-align: center; width: 800px; margin: auto;">
+        <table class="imagetable" style="margin: 0px auto;">
+            <thead>
+                <tr>
+                    <th>电影名称</th>
+                    <th>价格</th>
+                    <th>购买时间</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{each history}}
+                <tr>
+                    <td>{{$value.movie}}</td>
+                    <td>{{$value.amount}}</td>
+                    <td>{{$value.date}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+
+
+
+        </table>
     </div>
 
+    <form action="/form" method="post" name="my_form">
+        <input type="text" name="user" id="user" style="display: none;">
+        <input type="text" name="psw" id="psw" style="display: none;">
+    </form>
+    <script class="include" type="text/javascript" src="../../public/js/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="../../public/js/jquery.scrollTo.min.js"></script>
+    <script src="../../public/js/common-scripts.js"></script>
+    <script>
+        $(() => {
+            $('#back_home').on('click', () => {
+                $.post('/get_form', {
+                    email: '{{email}}'
+                }, function (data) {
+                    data = JSON.parse(data)[0];
+                    $('#user').val(data.user);
+                    $('#psw').val(data.psw);
+                    document.my_form.submit();
+                })
+            })
 
-	<script class="include" type="text/javascript" src="../../public/js/jquery.dcjqaccordion.2.7.js"></script>
-	<script src="../../public/js/jquery.scrollTo.min.js"></script>
-	<script src="../../public/js/common-scripts.js"></script> 
-	
+        })
+    </script>
+
 </body>
+
 </html>

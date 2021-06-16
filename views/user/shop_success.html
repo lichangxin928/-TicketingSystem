@@ -1,34 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../../public/css/zhuce.css">
+    <script src="../../public/js/jquery-1.11.1.min.js"></script>
 </head>
+
 <body>
     <div class="wrap">
-            <div class="jump">
-                <p> 购票成功！ </p>
-                <a href="/">
-                    <button type="button"><a style="text-decoration: none;" href="/">点此返回主页面</a><tton>
-                </a>
-            </div>
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
+        <div class="jump">
+            <p>购票成功!</p>
+            <a href="#">
+                <button type="button" style="margin: auto;border-radius: 7px;">点此返回主页面</button>
+            </a>
         </div>
-    
-
+    </div>
+    <form action="/form" method="POST" name="my_form">
+        <input id="user" type="text" name="user" style="display: none;">
+        <input id="psw" type="text" name="psw" style='display:none;'>
+    </form>
 </body>
+<script>
+    $(() => {
+        $('button').on('click', () => {
+            $.post('/get_form', {
+                email: '{{email}}'
+            }, function (data) {
+                data = JSON.parse(data)[0];
+                $('#user').val(data.user);
+                $('#psw').val(data.psw);
+                document.my_form.submit();
+            })
+        })
+
+    })
+</script>
+
 </html>

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <head>
 	<title>购票系统</title>
 	<meta name="keywords" content="" />
@@ -10,90 +11,108 @@
 	<link href="../../public/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link href="../../public/css/templatemo_style.css" rel="stylesheet" type="text/css">
 	<style>
-		#BT{
-			color: #805e07; margin-right: -100px; width: 100px; background-color:#2a2a2a; border:none;
+		#BT {
+			color: #805e07;
+			margin-right: -100px;
+			width: auto;
+			background-color: #2a2a2a;
+			border: none;
+			border-radius: 5px;
 		}
-		#BT:hover{
 
+		#BT:hover {
 			color: yellow;
+			background-color: green;
 		}
 	</style>
 	<script type="text/javascript">
 		window.onload=function(){
 			let bt=document.getElementById('BT');
-			let x=bt.innerHTML;
-			// alert(x);
-			
+			// alert(bt.innerHTML);
+			bt.onclick=function(){
+				let url = '{{sell_url}}'
+				if(url === '/user_login'){
+					window.location.href="http://127.0.0.1:3000{{sell_url}}"
+				}
+				
+			}
 		}
 	</script>
 </head>
+
 <body>
 	<nav id="responsive-menu">
-        <ul class="menu-holder">
-            <li class="active"><a href="#home"><i class="fa fa-home"></i>Home</a></li>
-            <li><a href="#about"><i class="fa fa-briefcase"></i>About</a></li>
-            <li><a href="#services"><i class="fa fa-cogs"></i>Services</a></li>
-            <li><a href="#products"><i class="fa fa-list"></i>Products</a></li>
-            <li><a href="#contact"><i class="fa fa-envelope"></i>Contact</a></li>
-        </ul>
-    </nav>
-    <div class="templatemo-site-header">
+		<ul class="menu-holder">
+			<li class="active"><a href="#home"><i class="fa fa-home"></i>Home</a></li>
+			<li><a href="#about"><i class="fa fa-briefcase"></i>About</a></li>
+			<li><a href="#services"><i class="fa fa-cogs"></i>Services</a></li>
+			<li><a href="#products"><i class="fa fa-list"></i>Products</a></li>
+			<li><a href="#contact"><i class="fa fa-envelope"></i>Contact</a></li>
+		</ul>
+	</nav>
+	<div class="templatemo-site-header">
 		<div class="container">
-			<div class="row templatemo-position-relative">				
+			<div class="row templatemo-position-relative">
 				<nav class="hidden-xs text-uppercase templatemo-nav">
 					<ul class="menu-holder">
 						<li class="active"><a href="#home">购票</a></li>
-						<li><a href="#about">演员</a></li>					
+						<li><a href="#about">演员</a></li>
 						<li><a href="#services">其他电影推荐</a></li>
-						<button  id="BT"> 登 录 </button>
-						
+						<li>
+							<button id="BT" >{{sell_btn}}</button>
+						</li>
+
 					</ul>
-					
+
 				</nav>
 				<h1 class="templatemo-site-name">
-                	<span class="templatemo-brown">欢迎来到</span> 
-                	<span class="templatemo-gold">票多多电影售票</span>
-                </h1>
+					<span class="templatemo-brown">欢迎来到</span>
+					<span class="templatemo-gold">票多多电影售票</span>
+				</h1>
 				<div class="text-right visible-xs">
-		            <a href="#" id="mobile_menu"><span class="fa fa-bars"></span></a>
-		        </div>
+					<a href="#" id="mobile_menu"><span class="fa fa-bars"></span></a>
+				</div>
 			</div>
-		</div>    	
-    </div>
+		</div>
+	</div>
 	<section id="home" class="templatemo-section">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-6 templatemo-position-relative">
 
-						<div class="templatemo-home-image-container">
-							<img src="../../public/images/sell_ticket/2.png" alt="Home" class="templatemo-home-image">
-							<div class="templatemo-image-overlay">							
-								<span class="fa fa-search templatemo-search-icon"></span>
-								<p class="text-uppercase templatemo-gold">八月未央</p>
-								<p class="text-uppercase"></p>												
-							</div>
+					<div class="templatemo-home-image-container">
+						<img src="../../public/images/sell_ticket/2.png" alt="Home" class="templatemo-home-image">
+						<div class="templatemo-image-overlay">
+							<span class="fa fa-search templatemo-search-icon"></span>
+							<p class="text-uppercase templatemo-gold">八月未央</p>
+							<p class="text-uppercase"></p>
 						</div>
-															
+					</div>
+
 				</div>
 				<div class="col-lg-6 col-md-6">
 					<div class="templatemo-content-box templatemo-second-box">
 						<h2 class="templatemo-brown">电影简介</h2>
-						
-						<p class="margin-top-30">《八月未央》是由李凯执导，钟楚曦、谭松韵、罗晋领衔主演的青春爱情剧情片，于2021年4月16日在中国大陆上映。该片根据庆山的同名小说散文集改编，讲述了两个性格迥异的闺蜜知己在个性的强烈碰撞与爱情的抉择间逐渐释然，最终冰释前嫌 
-							<br /><br /><br /><br /><br />价格：60元<br/><br />上映时间: 2021年4月16日<br /><br />主    演:钟楚曦 谭松韵 罗晋<br /><br />片    长:  95 分钟 <br /><br />出品公司: 北京凯视芳华文化传播有限公司、北京聚合影联文化传媒有限公司、上海千旗影业有限公司
+
+						<p class="margin-top-30">
+							《八月未央》是由李凯执导，钟楚曦、谭松韵、罗晋领衔主演的青春爱情剧情片，于2021年4月16日在中国大陆上映。该片根据庆山的同名小说散文集改编，讲述了两个性格迥异的闺蜜知己在个性的强烈碰撞与爱情的抉择间逐渐释然，最终冰释前嫌
+							<br /><br /><br /><br /><br />价格：60元<br /><br />上映时间: 2021年4月16日<br /><br />主 演:钟楚曦 谭松韵
+							罗晋<br /><br />片 长: 95 分钟 <br /><br />出品公司: 北京凯视芳华文化传播有限公司、北京聚合影联文化传媒有限公司、上海千旗影业有限公司
 						</p>
-						<a href="/shop_success" class="btn text-uppercase templatemo-btn templatemo-info-btn">点击购票</a>
-					</div>					
+						<a href="/shop_success1?{{sell_email}}"
+							class="btn text-uppercase templatemo-btn templatemo-info-btn" >点击购票</a>
+						<a href="#"></a>
+					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-    <br />
-	<br /> 
 	<br />
-	<br /> 
 	<br />
-	<br /> 
+	<br />
+	<br />
+	<br />
+	<br />
 	<section id="about" class="templatemo-section">
 		<div class="container">
 			<div class="row">
@@ -102,57 +121,80 @@
 						<h2 class="templatemo-brown">
 							<span class="templatemo-section-title" style="font-size: 70px;">饰演明星</span>
 						</h2>
-						</div>										
+					</div>
 				</div>
 				<div class="col-lg-6 col-md-6">
 					<div class="templatemo-flex-center templatemo-black-bg">
 						<div class="templatemo-flex-center templatemo-brown-rectangle-bg">
 							<div class="jcarousel-wrapper templatemo-team">
 								<div class="jcarousel">
-								    <ul>
-								        <li>
-								        	<div class="text-center templatemo-team-member-container">
-								        		<div class="templatemo-member-img-container">
-								        			<img src="../../public/images/sell_ticket/team-img-frame.png" alt="Team img frame" class="templatemo-img-frame">
-								        			<img src="../../public/images/sell_ticket/star4.png" alt="Team Member 1" class="tm-team-member-img" style="width: 140px;height: auto;">
-								        		</div>								        		
-												<h3 class="tm-team-member-title templatemo-gold text-uppercase margin-top-15">罗晋</h3>
-												<img src="../../public/images/sell_ticket/underline.png" alt="Underline" class="margin-top-15 img-responsive center-block">
-												<p class="margin-top-15">罗晋，1981年11月30日出生于江西省宜春市铜鼓县，中国内地影视男演员，国家二级演员，毕业于北京电影学院表演系2002级本科。2003年，出演个人首部电视剧《售楼处的故事》，从而正式进入演艺圈。2006年，主演战争剧《战争目光》。2007年，出演个人首部电影《金碧辉煌》</p>
-												
+									<ul>
+										<li>
+											<div class="text-center templatemo-team-member-container">
+												<div class="templatemo-member-img-container">
+													<img src="../../public/images/sell_ticket/team-img-frame.png"
+														alt="Team img frame" class="templatemo-img-frame">
+													<img src="../../public/images/sell_ticket/star4.png"
+														alt="Team Member 1" class="tm-team-member-img"
+														style="width: 140px;height: auto;">
+												</div>
+												<h3
+													class="tm-team-member-title templatemo-gold text-uppercase margin-top-15">
+													罗晋</h3>
+												<img src="../../public/images/sell_ticket/underline.png" alt="Underline"
+													class="margin-top-15 img-responsive center-block">
+												<p class="margin-top-15">
+													罗晋，1981年11月30日出生于江西省宜春市铜鼓县，中国内地影视男演员，国家二级演员，毕业于北京电影学院表演系2002级本科。2003年，出演个人首部电视剧《售楼处的故事》，从而正式进入演艺圈。2006年，主演战争剧《战争目光》。2007年，出演个人首部电影《金碧辉煌》
+												</p>
+
 											</div>
-								        </li>
-								        <li>
-								        	<div class="text-center templatemo-team-member-container">
-								        		<div class="templatemo-member-img-container">
-								        			<img src="../../public/images/sell_ticket/team-img-frame.png" alt="Team img frame" class="templatemo-img-frame">
-													<img src="../../public/images/sell_ticket/star3.png" alt="Team Member 2" class="img-circle tm-team-member-img" style="width: 140px;height: auto;">
+										</li>
+										<li>
+											<div class="text-center templatemo-team-member-container">
+												<div class="templatemo-member-img-container">
+													<img src="../../public/images/sell_ticket/team-img-frame.png"
+														alt="Team img frame" class="templatemo-img-frame">
+													<img src="../../public/images/sell_ticket/star3.png"
+														alt="Team Member 2" class="img-circle tm-team-member-img"
+														style="width: 140px;height: auto;">
 												</div>
-												<h3 class="tm-team-member-title templatemo-gold text-uppercase margin-top-15">谭松韵</h3>
-												<img src="../../public/images/sell_ticket/underline.png" alt="Underline" class="margin-top-15">
-												<p class="margin-top-15">谭松韵，1990年5月31日出生于四川省泸州市叙永县，中国内地影视女演员，毕业于北京电影学院表演系。2005年，因拍摄电视剧《好好过日子》而开始接触表演。2012年，因在清宫剧《后宫·甄嬛传》中扮演淳贵人一角而受到关注。2016年，凭借网络剧《最好的我们》获得爱奇艺尖叫之夜年度最具潜力演员。</p>
-												
-											</div>							        	
-								        </li>
-								        <li>
-								        	<div class="text-center templatemo-team-member-container">
-								        		<div class="templatemo-member-img-container">
-								        			<img src="../../public/images/sell_ticket/team-img-frame.png" alt="Team img frame" class="templatemo-img-frame">
-													<img src="../../public/images/sell_ticket/star2.png" alt="Team Member 3" class="img-circle tm-team-member-img" style="width: 150px;height: auto;">
+												<h3
+													class="tm-team-member-title templatemo-gold text-uppercase margin-top-15">
+													谭松韵</h3>
+												<img src="../../public/images/sell_ticket/underline.png" alt="Underline"
+													class="margin-top-15">
+												<p class="margin-top-15">
+													谭松韵，1990年5月31日出生于四川省泸州市叙永县，中国内地影视女演员，毕业于北京电影学院表演系。2005年，因拍摄电视剧《好好过日子》而开始接触表演。2012年，因在清宫剧《后宫·甄嬛传》中扮演淳贵人一角而受到关注。2016年，凭借网络剧《最好的我们》获得爱奇艺尖叫之夜年度最具潜力演员。
+												</p>
+
+											</div>
+										</li>
+										<li>
+											<div class="text-center templatemo-team-member-container">
+												<div class="templatemo-member-img-container">
+													<img src="../../public/images/sell_ticket/team-img-frame.png"
+														alt="Team img frame" class="templatemo-img-frame">
+													<img src="../../public/images/sell_ticket/star2.png"
+														alt="Team Member 3" class="img-circle tm-team-member-img"
+														style="width: 150px;height: auto;">
 												</div>
-												<h3 class="tm-team-member-title templatemo-gold text-uppercase margin-top-15">钟楚曦</h3>
-												<img src="../../public/images/sell_ticket/underline.png" alt="Underline" class="margin-top-15">
-												<p class="margin-top-15">钟楚曦（Elaine Zhong），1993年3月18日出生于广东省广州市，毕业于上海戏剧学院表演系，中国内地女演员。</p>
-									
-											</div>							        	
-								        </li>
-								    </ul>
+												<h3
+													class="tm-team-member-title templatemo-gold text-uppercase margin-top-15">
+													钟楚曦</h3>
+												<img src="../../public/images/sell_ticket/underline.png" alt="Underline"
+													class="margin-top-15">
+												<p class="margin-top-15">钟楚曦（Elaine
+													Zhong），1993年3月18日出生于广东省广州市，毕业于上海戏剧学院表演系，中国内地女演员。</p>
+
+											</div>
+										</li>
+									</ul>
 								</div>
 								<a href="#" class="jcarousel-control-prev inactive">&lsaquo;</a>
-				                <a href="#" class="jcarousel-control-next">&rsaquo;</a>
+								<a href="#" class="jcarousel-control-next">&rsaquo;</a>
 							</div>
-						</div>						
-					</div>					
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -162,28 +204,32 @@
 			<div class="row">
 				<hr>
 				<div class="col-lg-6 col-md-6">
-							<div class="templatemo-flex-item-ie-fix padding-30">
-								
-								<h2 class="templatemo-gold">电影推荐</h2>
-								<br />
-								<br />
-								<br />
-								<div class="templatemo-service-container margin-top-15">
+					<div class="templatemo-flex-item-ie-fix padding-30">
+
+						<h2 class="templatemo-gold">电影推荐</h2>
+						<br />
+						<br />
+						<br />
+						<div class="templatemo-service-container margin-top-15">
 
 
-									<a href="../../views/user/sell_ticket2.html"><img src="../../public/images/sell_ticket/recom1.png" alt="Plan 1" class="templatemo-service-image" style="width: 350px;height:auto;"></a>
-												
-									
-								</div>	
-							</div>
+							<a href="../../views/user/sell_ticket2.html"><img
+									src="../../public/images/sell_ticket/recom1.png" alt="Plan 1"
+									class="templatemo-service-image" style="width: 350px;height:auto;"></a>
+
+
+						</div>
+					</div>
 				</div>
 				<div class="col-lg-6 col-md-6">
 					<div class="templatemo-content-box templatemo-second-box">
 						<h2 class="templatemo-brown">
 							<span class="templatemo-section-title">电影简介 <span class="templatemo-gold"></span></span>
 						</h2>
-						<p class="margin-top-30">南方炎热的夏日夜晚，年轻的王学明（彭于晏 饰）遭遇了一起意外。梁妈（张艾嘉 饰）的老公 忽然失踪，她寻求陈警官的帮助，却不知自己已成为别人的下一个“目标”。陈警官（王砚辉 饰）负责老梁 失踪案，他发现案情的发展远超自己掌控。这群不知命运已被悄然更改的人，都在试图窥视关于那个夜晚的真相，但这个夏夜的记忆如错乱的拼图，愈加扑朔迷离……</p>
-					</div>					
+						<p class="margin-top-30">南方炎热的夏日夜晚，年轻的王学明（彭于晏 饰）遭遇了一起意外。梁妈（张艾嘉 饰）的老公
+							忽然失踪，她寻求陈警官的帮助，却不知自己已成为别人的下一个“目标”。陈警官（王砚辉 饰）负责老梁
+							失踪案，他发现案情的发展远超自己掌控。这群不知命运已被悄然更改的人，都在试图窥视关于那个夜晚的真相，但这个夏夜的记忆如错乱的拼图，愈加扑朔迷离……</p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -196,24 +242,30 @@
 						<h2 class="templatemo-brown">
 							<span class="templatemo-section-title">电影简介 <span class="templatemo-gold"></span></span>
 						</h2>
-						<p class="margin-top-30">意大利南部小镇，古灵精怪的小男孩多多（萨瓦特利·卡西欧 饰）喜欢看电影，更喜欢看放映师艾佛特（菲利浦·诺瓦雷 饰）放电影，他和艾佛特成为了忘年之交，在胶片中找到了童年生活的乐趣。 好心的艾佛特为了让更多的观众看到电影，搞了一次露天电影，结果胶片着火了，多多把艾弗达从火海 中救了出来，但艾弗达双目失明。多多成了小镇唯一会放电影的人，他接替意大利南部小镇，古灵精怪的小男孩多多（萨瓦特利·卡西欧 饰）喜欢看电影，更喜欢看放映师艾佛特（菲利浦·诺瓦雷 饰）放电影，他和艾佛特成为了忘年之交，在胶片中找到了童年生活的乐趣。 好心的艾佛特为了让更多的观众看到电影，搞了一次露天电影，结果胶片着火了，多多把艾弗达从火海 中救了出来，但艾弗达双目失明。多多成了小镇唯一会放电影的人，他接替艾佛特成了小镇的电影放映师。艾佛特成了小镇的电影放映师。</p>
-					</div>					
+						<p class="margin-top-30">意大利南部小镇，古灵精怪的小男孩多多（萨瓦特利·卡西欧 饰）喜欢看电影，更喜欢看放映师艾佛特（菲利浦·诺瓦雷
+							饰）放电影，他和艾佛特成为了忘年之交，在胶片中找到了童年生活的乐趣。 好心的艾佛特为了让更多的观众看到电影，搞了一次露天电影，结果胶片着火了，多多把艾弗达从火海
+							中救了出来，但艾弗达双目失明。多多成了小镇唯一会放电影的人，他接替意大利南部小镇，古灵精怪的小男孩多多（萨瓦特利·卡西欧 饰）喜欢看电影，更喜欢看放映师艾佛特（菲利浦·诺瓦雷
+							饰）放电影，他和艾佛特成为了忘年之交，在胶片中找到了童年生活的乐趣。 好心的艾佛特为了让更多的观众看到电影，搞了一次露天电影，结果胶片着火了，多多把艾弗达从火海
+							中救了出来，但艾弗达双目失明。多多成了小镇唯一会放电影的人，他接替艾佛特成了小镇的电影放映师。艾佛特成了小镇的电影放映师。</p>
+					</div>
 				</div>
 				<div class="col-lg-6 col-md-6">
 					<div class="templatemo-flex-item-ie-fix padding-30">
-								<div class="jcarousel">     
-									<div class="templatemo-service-container margin-top-15">
-											
-										
-										<a href="/sell_ticket2"><img src="../../public/images/sell_ticket/recom2.png" alt="Plan 1" class="templatemo-service-image" style="width: 400px;height:539px;">	</a>
+						<div class="jcarousel">
+							<div class="templatemo-service-container margin-top-15">
 
 
-									</div>	
-								</div>
-							</div>													
-						</div>						
-										
-				
+								<a href="/sell_ticket2?{{sell_email}}"><img
+										src="../../public/images/sell_ticket/recom2.png" alt="Plan 1"
+										class="templatemo-service-image" style="width: 400px;height:539px;"> </a>
+
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+
 			</div>
 		</div>
 	</section>
@@ -222,24 +274,27 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-6">
-							<div class="templatemo-flex-item-ie-fix padding-30">
-								<h2 class="templatemo-gold">超越</h2>
-								<div class="templatemo-service-container margin-top-15">
+					<div class="templatemo-flex-item-ie-fix padding-30">
+						<h2 class="templatemo-gold">超越</h2>
+						<div class="templatemo-service-container margin-top-15">
 
 
-									<a href="/sell_ticket2"><img src="../../public/images/sell_ticket/recom3.jpg" alt="Plan 1" class="templatemo-service-image" style="width: 350px;height:auto;"></a>
-												
-									
-								</div>	
-							</div>
+							<a href="/sell_ticket2?{{sell_email}}"><img src="../../public/images/sell_ticket/recom3.jpg"
+									alt="Plan 1" class="templatemo-service-image" style="width: 350px;height:auto;"></a>
+
+
+						</div>
+					</div>
 				</div>
 				<div class="col-lg-6 col-md-6">
 					<div class="templatemo-content-box templatemo-second-box">
 						<h2 class="templatemo-brown">
 							<span class="templatemo-section-title">电影简介 <span class="templatemo-gold"></span></span>
 						</h2>
-						<p class="margin-top-30">讲述了短跑运动员们的职业生涯和转型经历。电影中张榕容饰演的是“郝超越”（郑恺 饰）的爱人“齐悦悦”，两人因短跑相识相爱，齐悦悦在陪伴爱人经历了人生的高潮与低谷后，最终唤醒郝超越重新振作继续奔跑。百米冠军吴添翼为解开无法战胜老飞人郝超越的心结而返乡，不料郝超越早已沉沦，逃避最爱的跑步事业，更处心积虑利用吴添翼谋利。师兄弟二人的较量从回忆中的跑道延伸进现实生活，历经误会和冲突，最终冰释前嫌并互相治愈······</p>
-					</div>					
+						<p class="margin-top-30">讲述了短跑运动员们的职业生涯和转型经历。电影中张榕容饰演的是“郝超越”（郑恺
+							饰）的爱人“齐悦悦”，两人因短跑相识相爱，齐悦悦在陪伴爱人经历了人生的高潮与低谷后，最终唤醒郝超越重新振作继续奔跑。百米冠军吴添翼为解开无法战胜老飞人郝超越的心结而返乡，不料郝超越早已沉沦，逃避最爱的跑步事业，更处心积虑利用吴添翼谋利。师兄弟二人的较量从回忆中的跑道延伸进现实生活，历经误会和冲突，最终冰释前嫌并互相治愈······
+						</p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -250,13 +305,15 @@
 			<div class="col-lg-12">
 				<p class="templatemo-copyright-container text-uppercase small templatemo-brown">
 					<span class="templatemo-copyright-text"><a href="#" class="templatemo-gold">点此返回顶部</a></span>
-					
+
 				</p>
 			</div>
-		</div>		
-	</footer>	
+		</div>
+	</footer>
+	
 	<script src="../../public/js/jquery-1.11.1.min.js"></script>
 	<script src="../../public/js/jquery.jcarousel.min.js"></script>
 	<script src="../../public/js/templatemo_script.js"></script>
 </body>
+
 </html>

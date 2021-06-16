@@ -10,12 +10,18 @@
 	<link href="../../public/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link href="../../public/css/templatemo_style.css" rel="stylesheet" type="text/css">
 	<style>
-		#BT{
-			color: #805e07; margin-right: -100px; width: 100px; background-color:#2a2a2a; border:none;
+		#BT {
+			color: #805e07;
+			margin-right: -100px;
+			width: auto;
+			background-color: #2a2a2a;
+			border: none;
+			border-radius: 5px;
 		}
-		#BT:hover{
 
+		#BT:hover {
 			color: yellow;
+			background-color: green;
 		}
 	</style>
 </head>
@@ -37,7 +43,7 @@
 						<li class="active"><a href="#home">购票</a></li>
 						<li><a href="#about">演员</a></li>					
 						<li><a href="#services">其他电影推荐</a></li>
-						<button  id="BT"> 登 录 </button>
+						<a href="{{sell_url}}"><button  id="BT"> {{sell_btn}} </button></a>
 						
 					</ul>
 				</nav>
@@ -73,7 +79,7 @@
 						<p class="margin-top-30">百米冠军吴添翼为解开无法战胜老飞人郝超越的心结而返乡，不料郝超越早已沉沦，逃避最爱的跑步事业，更处心积虑利用吴添翼谋利。师兄弟二人的较量从回忆中的跑道延伸进现实生活，历经误会和冲突，最终冰释前嫌并互相治愈······
 							<br /><br /><br /><br /><br /><br />价格：60元<br /><br />导演： 韩博文<br /><br />上映日期： 2021-06-12<br /><br />类型： 剧情 / 喜剧 / 运动<br /><br />片长： 97分钟 <br /><br />主演： 郑恺 / 李昀锐 / 曹炳琨 / 张蓝心 / 张榕容
 						</p>
-						<a href="/shop_success" class="btn text-uppercase templatemo-btn templatemo-info-btn">点击购票</a>
+						<a href="/shop_success2?email={{sell_btn}}" class="btn text-uppercase templatemo-btn templatemo-info-btn">点击购票</a>
 					</div>					
 				</div>
 			</div>
