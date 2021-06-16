@@ -60,7 +60,7 @@ window.onload = function(){
             return false;
         }
         else if(/^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/.test(em.value)==false){
-                divs[0].innerHTML="请输入正确的邮箱格式！";
+                divs[1].innerHTML="请输入正确的邮箱格式！";
                 return false;
             }
         if(divs[0].innerHTML==''&&divs[1].innerHTML==''&&divs[2].innerHTML==''&&divs[3].innerHTML=='')

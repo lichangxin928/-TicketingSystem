@@ -2,6 +2,7 @@ const nodemailer = require("nodemailer");
 
 // 创建一个 smtp 服务器
 const config = {
+    secureConnection:true,
     host:'smtp.163.com',
     service:"163",  //  邮箱
     secure:true,
