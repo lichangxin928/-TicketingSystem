@@ -5,7 +5,7 @@ const pool = mysql.createPool({
     connectionLimit: 10,
     host: 'localhost',	//默认情况下的主机名
     user: 'root',			//默认情况下的用户名
-    password: '123',		//安装时设置的密码
+    password: '111',		//安装时设置的密码
     database: 'ticketing',		//连接的数据库名字
     multipleStatements: true,
     timezone: "SYSTEM"
